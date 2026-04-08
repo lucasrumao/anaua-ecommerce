@@ -1,0 +1,8 @@
+# Dependências do Node (O grande vilão do peso)
+node_modules/
+
+# Arquivos ocultos gerados pelo sistema
+.DS_Store
+
+# Se você tiver vídeos muito grandes que travam o upload, descomente a linha abaixo
+# assets/video/*.mp4
