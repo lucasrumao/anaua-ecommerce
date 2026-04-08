@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F9F4EF">
+    
+    <title>Loja | Anauá</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&family=Inter:wght@300;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/loja.css">
+    <link rel="stylesheet" href="css/pages/cart-sidebar.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <link rel="shortcut icon" href="assets/icons/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="top-header" style="border-bottom: 1px solid #E6D8CA;">
+    <div class="header-container">
+        <nav class="nav-left">
+            <a href="sobre.html">Sobre</a>
+            <a href="loja.html">Loja</a>
+        </nav>
+
+        <a href="index.html" class="logo-central">
+            ANAUÁ
+        </a>
+
+        <div class="nav-right">
+            <a href="login.html" class="header-icon" title="Perfil">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <button class="header-icon" title="Buscar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <button class="header-icon cart-trigger" title="Carrinho">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count">0</span>
+                
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="shop-section">
+    <div class="container">
+        <div class="shop-filters">
+
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="rosto">Rosto</button>
+            <button class="filter-btn" data-filter="corpo">Corpo</button>
+            <button class="filter-btn" data-filter="tratamentos">Tratamentos</button>
+            <button class="filter-btn" data-filter="kits">Kits</button>
+
+        </div>
+        
+    
+
+<div class="products-grid">
+                    <!-- SABONETE FACIAL -->
+                <div class="product-item" data-category="rosto">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=sabonete-andiroba'">
+                        <img src="assets/img/sabonete.png" alt="Sabonete Facial de Andiroba e Argila Branca">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('Sabonete Facial de Andiroba e Argila Branca', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+    <div class="stars-container" data-nota="5.0"></div>
+    <span class="rating-count">(5.0)</span>
+</div>
+                        <span class="product-category">Linha Essencial</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=sabonete-andiroba'">
+                            Sabonete Facial de Andiroba e Argila Branca</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 42,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Sabonete Facial de Andiroba e Argila Branca', 'R$ 42,00', 'assets/img/sabonete.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- TÔNICO FACIAL -->
+                <div class="product-item" data-category="rosto">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=tonico-castanha'">
+                        <img src="assets/img/tonico-facial.png" alt="Tônico Castanha">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('tonico-castanha', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+<div class="product-rating">
+    <div class="stars-container" data-nota="3.5"></div>
+    <span class="rating-count">(3.5)</span>
+</div>                       <span class="product-category">Linha Essencial</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=tonico-castanha'">
+                            Tônico Facial de Chá Verde e Castanha e Castanha-do-Pará</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 56,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'TTônico Facial de Chá Verde e Castanha e Castanha-do-Pará', 'R$ 56,00', 'assets/img/tonico.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- SÉRUM FACIAL -->
+                <div class="product-item" data-category="rosto tratamentos">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=serum-antioxidante'">
+                        <img src="assets/img/serum.png" alt="Sérum Vitamina C">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('serum-vitamina-c', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+<div class="product-rating">
+    <div class="stars-container" data-nota="5.0"></div>
+    <span class="rating-count">(5.0)</span>
+</div>                        <span class="product-category">Cuidado Facial</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=serum-antioxidante'">
+                            Sérum Facial Antioxidante com Vitamina C e Extrato de Açaí</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 78,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Sérum Facial Antioxidante com Vitamina C e Extrato de Açaí', 'R$ 78,00', 'assets/img/serum.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- EDFOLIANTE CORPORAL -->
+                <div class="product-item" data-category="corpo">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=esfoliante-cafe'">
+                        <img src="assets/img/esfoliante.png" alt="Esfoliante Corporal">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('esfoliante-corpo', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+<div class="product-rating">
+    <div class="stars-container" data-nota="3.7"></div>
+    <span class="rating-count">(3.7)</span>
+</div>                        <span class="product-category">Corpo</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=esfoliante-cafe'">
+                            Esfoliante Corporal de Café Verde e Açúcar Mascavo</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 54,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Esfoliante Corporal de Café Verde e Açúcar Mascavo', 'R$ 54,00', 'assets/img/esfoliante.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HIDRATANTE FACIAL-->
+                <div class="product-item" data-category="rosto">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=hidratante-cupuacu'">
+                        <img src="assets/img/hidratante.png" alt="Hidratante Facial">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('hidratante-cupuacu', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+    <div class="stars-container" data-nota="4.7"></div>
+    <span class="rating-count">(4.7)</span>
+</div>
+                        <span class="product-category">Tratamentos Naturais</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=hidratante-cupuacu'">
+                            Hidratante Facial de Cupuaçu e Ácido Hialurônico</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 68,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Hidratante Facial de Cupuaçu e Ácido Hialurônico', 'R$ 68,00', 'assets/img/hidratante.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÓLEO FACIAL -->
+                <div class="product-item" data-category="rosto tratamentos">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=oleo-pracaxi'">
+                        <img src="assets/img/oleo.png" alt="Óleo Facial Multifuncional (Andiroba + Pracaxi)">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('oleo-rosa-mosqueta', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+    <div class="stars-container" data-nota="4.8"></div>
+    <span class="rating-count">(4.8)</span>
+</div>
+                        <span class="product-category">Cuidado Facial</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=oleo-pracaxi'">
+                            Óleo Facial Multifuncional (Andiroba + Pracaxi)</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 64,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Óleo Facial Multifuncional (Andiroba + Pracaxi)', 'R$ 64,00', 'assets/img/oleo.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- PROTETOR SOLAR -->
+                <div class="product-item" data-category="rosto corpo">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=protetor-urucum'">
+                        <img src="assets/img/protetor-solar.png" alt="Protetor Solar FPS 30 com Óleo de Urucum">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('protetor-urucum', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+<div class="product-rating">
+    <div class="stars-container" data-nota="4.7"></div>
+    <span class="rating-count">(4.7)</span>
+</div>                        <span class="product-category">Proteção e Reparação</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=protetor-urucum'">
+                           Protetor Solar FPS 30 com Óleo de Urucum</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 62,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Protetor Solar FPS 30 com Óleo de Urucum', 'R$ 62,00', 'assets/img/protetor-solar.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- BÁLSAMO -->
+                <div class="product-item" data-category="rosto corpo">
+                    <div class="product-image-container" onclick="window.location.href='produto.html?id=balsamo-murumuru'">
+                        <img src="assets/img/balsamo.png" alt="Bálsamo com Manteiga de Murumuru e Lavanda">
+                        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('balsamo-murumuru', this)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+<div class="product-rating">
+    <div class="stars-container" data-nota="4.7"></div>
+    <span class="rating-count">(4.7)</span>
+</div>                        <span class="product-category">Proteção e Reparação</span>
+                        <h3 class="product-name" onclick="window.location.href='produto.html?id=balsamo-murumuru'">
+                            Bálsamo com Manteiga de Murumuru e Lavanda</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 62,00</span>
+                            <div class="add-cart-wrapper">
+                                <div class="qty-selector">
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Bálsamo com Manteiga de Murumuru e Lavanda', 'R$ 62,00', 'assets/img/balsamo.png')">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CREME CORPORAL -->
+                <div class="product-item" data-category="corpo">
+    <div class="product-image-container" onclick="window.location.href='produto.html?id=creme-corporal-castanha'">
+        <img src="assets/img/creme-corporal.png" alt="Creme Corporal Castanha">
+        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('creme-corporal-castanha', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <div class="product-rating">
+    <div class="stars-container" data-nota="4.9"></div>
+    <span class="rating-count">(4.9)</span>
+</div>    
+        <span class="product-category">Corpo e Autocuidado</span>
+        <h3 class="product-name" onclick="window.location.href='produto.html?id=creme-corporal-castanha'">Creme Corporal de Castanha-do-Pará e Mel de Jataí</h3>
+        <div class="product-price-row">
+            <span class="product-price">R$ 66,00</span>
+            <div class="add-cart-wrapper">
+                <div class="qty-selector">
+                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                    <input type="number" value="1" min="1" readonly>
+                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                </div>
+                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Creme Corporal de Castanha-do-Pará', 'R$ 66,00', 'assets/img/creme-corporal.png')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MÁSCARA FACIAL -->
+<div class="product-item" data-category="tratamentos">
+    <div class="product-image-container" onclick="window.location.href='produto.html?id=mascara-argila'">
+        <img src="assets/img/mascara.png" alt="Máscara Facial Argila">
+        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('mascara-argila', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <div class="product-rating">
+    <div class="stars-container" data-nota="4.8"></div>
+    <span class="rating-count">(4.8)</span>
+</div>    
+        <span class="product-category">Tratamentos Naturais</span>
+        <h3 class="product-name" onclick="window.location.href='produto.html?id=mascara-argila'">Máscara Facial de Argila com Buriti e Camomila</h3>
+        <div class="product-price-row">
+            <span class="product-price">R$ 59,00</span>
+            <div class="add-cart-wrapper">
+                <div class="qty-selector">
+                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                    <input type="number" value="1" min="1" readonly>
+                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                </div>
+                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Máscara Facial de Argila com Buriti e Camomila', 'R$ 59,00', 'assets/img/mascara.png')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SACOLA PARA VIAGEM -->
+<div class="product-item" data-category="kits">
+    <div class="product-image-container" onclick="window.location.href='produto.html?id=sacola-viagem'">
+        <img src="assets/img/sacola.png" alt="Sacola para Viagem">
+        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('sacola-viagem', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <div class="product-rating">
+    <div class="stars-container" data-nota="4.2"></div>
+    <span class="rating-count">(4.2)</span>
+</div>    
+        <span class="product-category">Acessórios</span>
+        <h3 class="product-name" onclick="window.location.href='produto.html?id=sacola-viagem'">Sacola para Viagem Anauá</h3>
+        <div class="product-price-row">
+            <span class="product-price">R$ 25,00</span>
+            <div class="add-cart-wrapper">
+                <div class="qty-selector">
+                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                    <input type="number" value="1" min="1" readonly>
+                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                </div>
+                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Sacola para Viagem', 'R$ 25,00', 'assets/img/sacola.png')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ECOBAG ANAUÁ -->
+<div class="product-item" data-category="kits">
+    <div class="product-image-container" onclick="window.location.href='produto.html?id=ecobag-anaua'">
+        <img src="assets/img/ecobag.png" alt="Ecobag Anauá">
+        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('ecobag-anaua', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <div class="product-rating">
+    <div class="stars-container" data-nota="5.0"></div>
+    <span class="rating-count">(5.0)</span>
+</div>    
+        <span class="product-category">Acessórios</span>
+        <h3 class="product-name" onclick="window.location.href='produto.html?id=ecobag-anaua'">Ecobag Anauá em Algodão Cru</h3>
+        <div class="product-price-row">
+            <span class="product-price">R$ 29,00</span>
+            <div class="add-cart-wrapper">
+                <div class="qty-selector">
+                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                    <input type="number" value="1" min="1" readonly>
+                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                </div>
+                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Ecobag Anauá', 'R$ 29,00', 'assets/img/ecobag.png')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- KIT ESSENCIAL ANAUÁ -->
+<div class="product-item" data-category="kits rosto">
+    <div class="product-image-container" onclick="window.location.href='produto.html?id=kit-anaua'">
+        <img src="assets/img/kit-anaua.png" alt="Kit Essencial Anauá">
+        <button class="wishlist-btn" onclick="event.stopPropagation(); toggleFavorito('kit-anaua', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <div class="product-rating">
+    <div class="stars-container" data-nota="5.0"></div>
+    <span class="rating-count">(5.0)</span>
+</div>    
+        <span class="product-category">Kit Essencial</span>
+        <h3 class="product-name" onclick="window.location.href='produto.html?id=kit-anaua'">Kit Essencial Anauá: Ritual de 3 Etapas</h3>
+        <div class="product-price-row">
+            <span class="product-price">R$ 149,00</span>
+            <div class="add-cart-wrapper">
+                <div class="qty-selector">
+                    <button onclick="event.stopPropagation(); changeCardQty(this, -1)">-</button>
+                    <input type="number" value="1" min="1" readonly>
+                    <button onclick="event.stopPropagation(); changeCardQty(this, 1)">+</button>
+                </div>
+                <button class="btn-add-cart-loja" onclick="event.stopPropagation(); adicionarComQtd(this, 'Kit Essencial Anauá', 'R$ 149,00', 'assets/img/kit-anaua.png')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+            </div> </div> </section>
+</main>
+
+
+<div id="cart-sidebar" class="cart-sidebar">
+    
+    <div class="cart-header">
+        <button id="close-cart" class="close-btn">&times;</button>
+        <h3>Meu Carrinho</h3>
+    </div>
+    
+    <div id="cart-items-container">
+        </div>
+
+    <div class="shipping-section">
+        <p id="free-shipping-msg">Faltam R$ 0,00 para Frete Grátis!</p>
+        <div class="progress-container">
+            <div id="shipping-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="cep-input-group">
+            <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
+            <button id="calc-cep-btn">Calcular</button>
+        </div>
+        <p id="shipping-result"></p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-summary" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">R$ 0,00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Frete:</span>
+                <span id="cart-shipping-value">R$ 0,00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: bold; color: #333; padding-top: 10px; border-top: 1px solid #eee;">
+                <span>Total:</span>
+                <span id="cart-sidebar-total">R$ 0,00</span>
+            </div>
+        </div>
+        
+        <button id="btn-checkout-mp" class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+</div> <div id="cart-overlay" class="cart-overlay"></div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Lê a URL para ver qual produto o cliente clicou
+        const parametrosDaURL = new URLSearchParams(window.location.search);
+        const produtoID = parametrosDaURL.get('id'); // Pega o "sabonete-andiroba"
+
+        // 2. Se tiver um ID e ele existir no nosso banco de dados...
+        if (produtoID && bancoDeProdutos[produtoID]) {
+            const produto = bancoDeProdutos[produtoID];
+
+            // 3. Preenche a página com os dados dele!
+            document.querySelector('.product-name').innerText = produto.nome;
+            document.querySelector('.current-price').innerText = produto.preco;
+            document.getElementById('main-product-image').src = produto.imagem;
+            
+            // Se você tiver um subtítulo na página, pode trocar também:
+            // document.querySelector('.product-subtitle').innerText = produto.descricaoCurta;
+        } else if (produtoID) {
+            // Se o ID não existir no banco, avisa o usuário
+            alert("Produto não encontrado!");
+        }
+    });
+</script>
+
+
+
+</body>
+<footer>
+
+    <footer class="footer-premium">
+    <div class="footer-seals">
+        <div class="seal-item"><span>Vegan</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Cruelty Free</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Ativos Amazônicos</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Eco Friendly</span></div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#" class="footer-logo">ANAUÁ</a>
+            <p>Conectando sua pele à essência pura da natureza brasileira.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <a href="loja.html">Loja</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="perfil.html">Perfil</a>
+                <a href="carrinho.html">Carrinho</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <a href="envio.html">Envio e Entrega</a>
+                <a href="trocas.html">Trocas e Devoluções</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Anauá Cosméticos. Todos os direitos reservados.</p>
+    </div>
+
+    <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Início</span>
+    </a>
+    <a href="loja.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+        <span>Loja</span>
+    </a>
+    <a href="busca.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <span>Busca</span>
+    </a>
+    <a href="perfil.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Perfil</span>
+    </a>
+</nav>
+</footer>
+
+<script src="js/loja.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/sidebar-cart.js"></script>
+<script src="js/produtos-db.js"></script>
+
+</html>

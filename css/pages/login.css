@@ -1,0 +1,672 @@
+/* =========================================
+   CABEÇALHO MINIMALISTA
+   ========================================= */
+.top-header {
+    width: 100%;
+    padding: 30px 0;
+    background-color: transparent; /* Mude para sua cor de fundo se não for sobre o banner */
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Base para esquerda e direita ocuparem o mesmo espaço */
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right {
+    justify-content: flex-end; /* Ícones grudados na direita */
+}
+
+/* Estilo dos links de texto (Sobre, Loja) */
+.nav-left a {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+/* LOGO CENTRAL - O Coração do Header */
+.logo-central {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Ícones Minimalistas */
+.header-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #8C4B3E; /* Cor fixa marrom */
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.header-icon:hover, .nav-left a:hover {
+    opacity: 0.6;
+}
+
+/* Contador do Carrinho (Pequeno e discreto) */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #55573D; /* Verde da marca */
+    color: #fff;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES MOBILE: LIMPEZA DO HEADER
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Esconde os links da esquerda */
+    .nav-left {
+        display: none !important;
+    }
+
+    /* 2. Esconde Perfil e Busca, mantém o Carrinho */
+    .nav-right .header-icon:not(.cart-trigger) {
+        display: none !important;
+    }
+
+    /* 3. A MÁGICA DA CENTRALIZAÇÃO */
+    .header-container {
+        display: grid !important; /* Mudamos para Grid para controle total */
+        grid-template-columns: 1fr auto 1fr !important; /* 3 colunas iguais */
+        align-items: center;
+    }
+
+    /* Criamos um espaço vazio na esquerda para equilibrar com o carrinho na direita */
+    .header-container::before {
+        content: "";
+        display: block;
+    }
+
+    .logo-central {
+        grid-column: 2; /* Logo sempre na coluna do meio */
+        font-size: 22px;
+        letter-spacing: 5px;
+        margin: 0 auto;
+    }
+
+    .nav-right {
+        grid-column: 3; /* Carrinho na última coluna */
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* --- ESTILOS DA PÁGINA DE LOGIN E CADASTRO --- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F9F4EF; /* Cor de fundo padrão da Anauá */
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 540px;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.login-title {
+    font-family: 'Inria Serif', serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #4A6741; /* Verde Anauá ao focar no campo */
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: -10px;
+}
+
+.forgot-password a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #8C4B3E; /* Tom terroso da marca */
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.forgot-password a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #4A6741;
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #3A5233;
+}
+
+.login-footer {
+    margin-top: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-footer a {
+    color: #4A6741;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 40px 20px;
+    }
+    .login-container {
+        padding: 20px 15px;
+    }
+}
+
+
+
+/* =========================================
+   FOOTER E SELOS
+   ========================================= */
+.footer-premium {
+    padding: 60px 5% 30px;
+    background-color: var(--color-bg);
+}
+
+.footer-seals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.1);
+    margin-bottom: 60px;
+}
+
+.seal-item {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8C4B3E;
+    font-weight: 600;
+}
+
+.seal-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(140, 75, 62, 0.2);
+    border-radius: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-brand { flex: 1; }
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #8C4B3E;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: var(--color-text-light);
+    max-width: 250px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: #8C4B3E;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--color-primary); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140, 75, 62, 0.05);
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-brand p { margin: 0 auto; }
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-seals { flex-wrap: wrap; gap: 20px; }
+    .seal-dot { display: none; }
+}
+
+/* =========================================
+   BOTTOM NAV: MENU MOBILE PREMIUM
+   ========================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #F2EFE9; /* Creme Anauá */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(140, 75, 62, 0.1);
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom); /* Ajuste para iPhones novos */
+}
+
+.nav-item span {
+    font-size: 9px !important; /* Tamanho bem pequeno e delicado */
+    text-transform: uppercase; /* Letras maiúsculas para o toque de luxo */
+    letter-spacing: 1px;       /* Espaçamento para não embolar as letras */
+    font-weight: 600;          /* Peso semibold para leitura */
+    margin-top: 4px;           /* Distância entre o ícone e o texto */
+}
+
+/* Esconder o menu no Desktop (já que temos o header no topo) */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-light);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Estilo para o item ativo (onde o usuário está) */
+.nav-item.active {
+    color: #8C4B3E; /* Marrom Anauá */
+}
+
+/* Ajuste caso você queira tirar os emojis depois e usar ícones */
+.nav-item i, .nav-item span {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* Efeito de clique suave */
+.nav-item:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+
+
+
+/* =========================================
+   INTERAÇÕES DE LOJA: CONTADOR DE ITENS E ANIMAÇÃO
+   ========================================= */
+
+/* Contador de itens no Header */
+#cart-count {
+    background-color: #8C4B3E;
+    color: white;
+    font-size: 10px;
+    font-weight: 600; /* Deixa o número mais nítido */
+    
+    /* O SEGREDO DO CÍRCULO PERFEITO: */
+    width: 18px;           /* Largura fixa */
+    height: 18px;          /* Altura igual à largura */
+    display: flex;         /* Transforma em flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;            /* Remove o padding que causava o oval */
+    border-radius: 50%;    /* Garante a curvatura perfeita */
+    
+    /* Sua animação de luxo continua aqui */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* Animação de pulo quando o item entra */
+.cart-bump {
+    transform: scale(1.4);
+}
+
+/* Efeito no botão Adicionar ao clicar */
+.add-to-cart.added {
+    background-color: #4A6741 !important; /* Verde folha suave para sucesso */
+    color: white;
+}
+
+.add-to-cart.added::after {
+    content: ' ✓';
+}
+
+
+
+
+
+/* DIVISOR SOCIAL */
+.social-divider {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.social-divider::before,
+.social-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #EAEaea;
+}
+
+.social-divider span {
+    padding: 0 15px;
+}
+
+/* BOTÕES SOCIAIS */
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #EAEaea;
+    border-radius: 8px;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.social-btn:hover {
+    background: #F9F9F9;
+    border-color: #CCC;
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.auth-footer {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #4A6741;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* ==========================================================================
+   1. ESTRUTURA BASE DO MODAL (A Capa de Invisibilidade e a Caixinha)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    
+    /* Mágica da invisibilidade */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Quando o botão é clicado, o JS adiciona essa classe e ele aparece */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EAEaea;
+    padding-bottom: 15px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+}
+
+.modal-input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E6D8CA;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. ESTILO ESPECÍFICO DAS CORES E BOTÕES (O Fim do visual "Capenga")
+   ========================================================================== */
+#modal-esqueci-senha .radio-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+#modal-esqueci-senha .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#modal-esqueci-senha input[type="radio"] {
+    accent-color: #4F6D46; /* Aquele seu verde maravilhoso */
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+#modal-esqueci-senha .btn-primary {
+    background-color: #4F6D46; /* Verde do botão principal */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#modal-esqueci-senha .btn-primary:hover {
+    background-color: #3b5234; /* Fica mais escuro ao passar o mouse */
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F9F4EF">
+    
+    <title>Anauá | Skincare Natural Brasileiro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&family=Inter:wght@300;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/pages/cart-sidebar.css">
+    <script src="js/produtos-db.js"></script>
+    
+</head>
+ <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <link rel="shortcut icon" href="assets/icons/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/icons/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icons/logo.png" type="image/x-icon">
+
+    
+
+<body>
+
+    <header class="top-header">
+    <div class="header-container">
+        <nav class="nav-left">
+            <a href="sobre.html">Sobre</a>
+            <a href="loja.html">Loja</a>
+        </nav>
+
+        <a href="index.html" class="logo-central">
+            ANAUÁ
+        </a>
+
+        <div class="nav-right">
+            <a href="login.html" class="header-icon" title="Perfil">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <button class="header-icon" title="Buscar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <button class="header-icon cart-trigger" title="Carrinho">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count" class="cart-badge">0</span>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+    <main>
+        <section class="hero-premium">
+            <div class="hero-top-line"></div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-text">100% Natural</span>
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">Pele Brasileira</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        A flor que<br>
+                        <span class="title-italic">cuida da sua</span><br>
+                        pele.
+                    </h1>
+                    
+                    <p class="hero-desc">
+                        Descubra o ápice do skincare botânico. Formulações ricas, enraizadas na biodiversidade brasileira e desenvolvidas para a sua essência.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="loja.html" class="btn-premium">Explorar a Coleção</a>
+                        <a href="sobre.html" class="link-minimal">Nossa Origem</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+    <div class="image-frame">
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            class="hero-img" 
+            style="object-fit: cover; width: 100%; height: 100%; display: block;">
+            <source src="assets/video/produto.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+    <div class="floating-detail">
+        <span>Origem: Pernambuco, BR</span>
+    </div>
+</div>
+
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section class="featured-products" id="loja">
+    <div class="section-header">
+        <div>
+            <span class="badge-text" style="margin-bottom: 5px; display: block;">Coleção</span>
+            <h2>Rotina Essencial</h2>
+        </div>
+        <div class="slider-controls">
+            <button class="nav-btn-minimal prev">‹</button>
+            <button class="nav-btn-minimal next">›</button>
+        </div>
+    </div>
+    
+    <div class="product-slider-wrapper">
+        <div class="product-slider">
+           <article class="product-card">
+    <div class="product-image-bg" style="background-color: #E6D8CA; cursor: pointer;" onclick="window.location.href='produto.html?id=sabonete-andiroba'">
+        <img src="assets/img/sabonete.png" alt="Sabonete" class="product-img-transparent">
+    </div>
+    
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=sabonete-andiroba'" style="cursor: pointer;">Sabonete Facial de Andiroba e Argila Branca</h3>
+        <span class="product-price">R$ 42,00</span>
+        
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+           
+
+<article class="product-card">
+    <div class="product-image-bg" style="background-color: #E8E0D5; cursor: pointer;" onclick="window.location.href='produto.html?id=serum-antioxidante'">
+        <img src="assets/img/serum.png" alt="Sérum" class="product-img-transparent">
+    </div>
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=serum-antioxidante'" style="cursor: pointer;">Sérum Facial Antioxidante com Vitamina C e Extrato de Açaí</h3>
+        <span class="product-price">R$ 78,00</span>
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+
+<article class="product-card">
+    <div class="product-image-bg" style="background-color: #D5E0E8; cursor: pointer;" onclick="window.location.href='produto.html?id=tonico-castanha'">
+        <img src="assets/img/tonico.png" alt="Tônico" class="product-img-transparent">
+    </div>
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=tonico-castanha'" style="cursor: pointer;">Tônico Facial de Chá Verde e Castanha e Castanha-do-Pará</h3>
+        <span class="product-price">R$ 56,00</span>
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+
+<article class="product-card">
+    <div class="product-image-bg" style="background-color: #F2E8E8; cursor: pointer;" onclick="window.location.href='produto.html?id=hidratante-cupuacu'">
+        <img src="assets/img/hidratante.png" alt="Hidratante" class="product-img-transparent">
+    </div>
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=hidratante-cupuacu'" style="cursor: pointer;">Hidratante Facial de Cupuaçu e Ácido Hialurônico</h3>
+        <span class="product-price">R$ 68,00</span>
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+
+<article class="product-card">
+    <div class="product-image-bg" style="background-color: #F2EFE9; cursor: pointer;" onclick="window.location.href='produto.html?id=mascara-argila'"> 
+        <img src="assets/img/mascara.png" alt="Óleo Corporal" class="product-img-transparent">
+    </div>
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=mascara-argila'" style="cursor: pointer;">Máscara Facial de Argila com Buriti e Camomila</h3>
+        <span class="product-price">R$ 59,00</span>
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+
+<article class="product-card">
+    <div class="product-image-bg" style="background-color: #FFFFFF; cursor: pointer;" onclick="window.location.href='produto.html?id=oleo-pracaxi'">
+        <img src="assets/img/oleo.png" alt="Máscara de Argila" class="product-img-transparent">
+    </div>
+    <div class="product-info">
+        <h3 onclick="window.location.href='produto.html?id=oleo-pracaxi'" style="cursor: pointer;">Óleo Facial Multifuncional (Andiroba + Pracaxi)</h3>
+        <span class="product-price">R$ 64,00</span>
+        <button class="btn-secondary add-to-cart" onclick="event.stopPropagation();">Adicionar</button>
+    </div>
+</article>
+
+
+
+
+
+
+</div> 
+    </div> 
+</section> 
+
+
+
+<section class="ingredients-section">
+    <div class="container">
+        <div class="section-header-ingredients">
+            <div class="title-group">
+                <span class="badge-text">Natural</span>
+                <h2>Ingredientes da Terra</h2>
+            </div>
+            <div class="ingredient-controls">
+                <button class="prev" onclick="moveIngredients(-1)">&#8249;</button>
+                <button class="next" onclick="moveIngredients(1)">&#8250;</button>
+            </div>
+        </div>
+        
+        <div class="ingredients-slider-wrapper">
+            <div class="ingredients-grid" id="ingredientsSlider">
+                <div class="ingredient-item">
+                    <div class="ingredient-image">
+                        <img src="assets/img/castanha.png" alt="Castanha">
+                    </div>
+                    <h3>Castanha</h3>
+                    <p>Rica em antioxidantes e selênio para proteção da barreira cutânea.</p>
+                </div>
+
+                <div class="ingredient-item">
+                    <div class="ingredient-image">
+                        <img src="assets/img/cupuacu.png" alt="Cupuaçu">
+                    </div>
+                    <h3>Cupuaçu</h3>
+                    <p>Poderoso hidratante que promove elasticidade e toque aveludado.</p>
+                </div>
+
+                <div class="ingredient-item">
+                    <div class="ingredient-image">
+                        <img src="assets/img/andiroba.png" alt="Andiroba">
+                    </div>
+                    <h3>Andiroba</h3>
+                    <p>Ação regeneradora e calmante para uma pele sempre revigorada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ritual-section">
+    <div class="ritual-container">
+        <div class="ritual-video-wrapper">
+            <video autoplay muted loop playsinline class="ritual-video">
+                <source src="assets/video/skincare.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <div class="ritual-content">
+            <span class="ritual-badge">Experiência Sensorial</span>
+            <h2 class="ritual-title">O Ritual <span class="title-italic">Anauá</span></h2>
+            <p class="ritual-desc">
+                Mais que skincare, um momento de pausa. Sinta a textura fluida e o aroma terroso da floresta enquanto reconecta-se com sua essência natural.
+            </p>
+            <ul class="ritual-steps">
+                <li><span class="step-number">01.</span> Limpeza Profunda</li>
+                <li><span class="step-number">02.</span> Hidratação Ativa</li>
+                <li><span class="step-number">03.</span> Proteção Natural</li>
+            </ul>
+            <a href="sobre.html" class="btn-premium">Descobrir Ritual</a>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-section">
+    <div class="newsletter-container">
+        <div class="newsletter-content">
+            <span class="news-badge">Comunidade Anauá</span>
+            <h2 class="news-title">Segredos da floresta na sua caixa de entrada.</h2>
+            <p class="news-text">Receba rituais de autocuidado, lançamentos exclusivos e conteúdos sobre a beleza consciente.</p>
+            <form class="news-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Inscrever-se</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="instagram-section">
+    <div class="insta-header">
+        <span class="insta-tag">@anaua.cosmeticos</span>
+        <h2 class="insta-title">Siga nossa jornada</h2>
+    </div>
+
+    <div class="insta-widget-container">
+        <behold-widget feed-id="O3nJdVD6GD5iIVCaVXcZ"></behold-widget>
+    </div>
+</section>
+
+<script>
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
+</script>
+
+
+
+
+
+<div id="cart-sidebar" class="cart-sidebar">
+    
+    <div class="cart-header">
+        <button id="close-cart" class="close-btn">&times;</button>
+        <h3>Meu Carrinho</h3>
+    </div>
+    
+    <div id="cart-items-container">
+        </div>
+
+    <div class="shipping-section">
+        <p id="free-shipping-msg">Faltam R$ 0,00 para Frete Grátis!</p>
+        <div class="progress-container">
+            <div id="shipping-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="cep-input-group">
+            <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
+            <button id="calc-cep-btn">Calcular</button>
+        </div>
+        <p id="shipping-result"></p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-summary" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">R$ 0,00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Frete:</span>
+                <span id="cart-shipping-value">R$ 0,00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: bold; color: #333; padding-top: 10px; border-top: 1px solid #eee;">
+                <span>Total:</span>
+                <span id="cart-sidebar-total">R$ 0,00</span>
+            </div>
+        </div>
+        
+        <button id="btn-checkout-mp" class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+</div> <div id="cart-overlay" class="cart-overlay"></div>
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Lê a URL para ver qual produto o cliente clicou
+        const parametrosDaURL = new URLSearchParams(window.location.search);
+        const produtoID = parametrosDaURL.get('id'); // Pega o "sabonete-andiroba"
+
+        // 2. Se tiver um ID e ele existir no nosso banco de dados...
+        if (produtoID && bancoDeProdutos[produtoID]) {
+            const produto = bancoDeProdutos[produtoID];
+
+            // 3. Preenche a página com os dados dele!
+            document.querySelector('.product-name').innerText = produto.nome;
+            document.querySelector('.current-price').innerText = produto.preco;
+            document.getElementById('main-product-image').src = produto.imagem;
+            
+            // Se você tiver um subtítulo na página, pode trocar também:
+            // document.querySelector('.product-subtitle').innerText = produto.descricaoCurta;
+        } else if (produtoID) {
+            // Se o ID não existir no banco, avisa o usuário
+            alert("Produto não encontrado!");
+        }
+    });
+</script>
+
+
+
+<footer class="footer-premium">
+    <div class="footer-seals">
+        <div class="seal-item"><span>Vegan</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Cruelty Free</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Ativos Amazônicos</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Eco Friendly</span></div>
+    </div>
+
+</main>
+
+ <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#" class="footer-logo">ANAUÁ</a>
+            <p>Conectando sua pele à essência pura da natureza brasileira.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <a href="loja.html">Loja</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="perfil.html">Perfil</a>
+                <a href="sobre.html">Carrinho</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <a href="envio.html">Envio e Entrega</a>
+                <a href="trocas.html">Trocas e Devoluções</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Anauá Cosméticos. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+   <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Início</span>
+    </a>
+    <a href="loja.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+        <span>Loja</span>
+    </a>
+    <a href="busca.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <span>Busca</span>
+    </a>
+    <a href="perfil.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Perfil</span>
+    </a>
+</nav>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/sidebar-cart.js"></script>
+</body>
+</html>

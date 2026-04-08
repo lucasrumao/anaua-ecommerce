@@ -1,0 +1,527 @@
+/* ==========================================================================
+   NOVO DESIGN PREMIUM: DETALHES DO PEDIDO
+   ========================================================================== */
+
+.container-detalhe {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* HEADER E VOLTAR */
+.link-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 25px;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+.link-voltar:hover { color: #8C4B3E; }
+
+.header-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.header-pedido h1 {
+    font-family: 'Inria Serif', serif;
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    color: #222;
+}
+.header-pedido p { margin: 0; color: #666; font-size: 1rem; }
+
+.badge-status-master {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+}
+
+/* Cores dinâmicas para o Badge que o JS vai usar */
+.badge-entregue { background-color: #E8F5E9; color: #2E7D32; border-color: #C8E6C9; }
+.badge-transito { background-color: #FFF8E1; color: #F57F17; border-color: #FFECB3; }
+.badge-cancelado { background-color: #FFEBEE; color: #C62828; border-color: #FFCDD2; }
+
+/* GRID PRINCIPAL */
+.grid-premium {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+/* CARDS FLUTUANTES */
+.card-premium {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #F0F0F0;
+    margin-bottom: 30px;
+}
+.card-titulo {
+    font-family: 'Inria Serif', serif;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 15px;
+    color: #222;
+}
+
+/* TIMELINE VERTICAL RICA */
+.timeline-vertical {
+    position: relative;
+    padding-left: 30px;
+}
+.timeline-vertical::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background-color: #EAEAEA;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #EAEAEA;
+    border: 4px solid #FFF;
+    box-shadow: 0 0 0 1px #EAEAEA;
+}
+.timeline-item.active .timeline-dot {
+    background-color: #4F6D46;
+    box-shadow: 0 0 0 2px rgba(79, 109, 70, 0.3);
+}
+
+.timeline-data { display: flex; justify-content: space-between; align-items: flex-start; }
+.timeline-data h4 { margin: 0 0 5px 0; font-size: 1.05rem; color: #222; }
+.timeline-data p { margin: 0; color: #666; font-size: 0.9rem; line-height: 1.5; }
+.timeline-hora { color: #999; font-size: 0.85rem; font-weight: 500; white-space: nowrap; margin-left: 15px; }
+
+/* LISTA DE PRODUTOS */
+.produto-linha {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #F0F0F0;
+}
+.produto-linha:last-child { border-bottom: none; padding-bottom: 0; }
+.produto-img {
+    width: 80px; height: 80px;
+    background-color: #F9F7F4;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; border: 1px solid #EAEAEA;
+}
+.produto-info { flex: 1; }
+.produto-info h4 { margin: 0 0 5px 0; font-size: 1.05rem; color: #222; }
+.produto-info p { margin: 0; color: #888; font-size: 0.9rem; }
+.produto-valores { text-align: right; }
+.produto-valores .qtd { color: #888; font-size: 0.9rem; margin-bottom: 4px; display: block; }
+.produto-valores .preco { font-weight: 600; font-size: 1.1rem; color: #222; }
+
+/* BLOCOS DE INFORMAÇÃO */
+.info-bloco { margin-bottom: 25px; }
+.info-bloco:last-child { margin-bottom: 0; }
+.info-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; font-weight: 600; }
+.info-texto { font-size: 0.95rem; color: #333; line-height: 1.6; margin: 0; }
+
+.metodo-pagamento {
+    display: flex; align-items: center; gap: 12px;
+    background-color: #F8F9FA; padding: 15px; border-radius: 10px; border: 1px solid #EAEAEA;
+    margin-top: 10px;
+}
+.icone-cartao {
+    width: 40px; height: 26px; background: #222; color: #FFF; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; font-style: italic;
+}
+
+/* RESUMO VALORES */
+.resumo-linha { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; color: #666; }
+.resumo-total {
+    display: flex; justify-content: space-between; margin-top: 20px; padding-top: 20px;
+    border-top: 2px dashed #EAEAEA; font-size: 1.3rem; font-weight: 700; color: #222;
+}
+
+/* BOTÕES DE AÇÃO */
+.acoes-container { display: flex; gap: 15px; margin-top: 30px; }
+.btn-acao {
+    flex: 1; padding: 16px; border-radius: 10px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px;
+}
+.btn-comprar { background-color: #4F6D46; color: #FFF; border: none; }
+.btn-comprar:hover { background-color: #3b5234; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(79, 109, 70, 0.2); }
+.btn-nota { background-color: #FFF; color: #333; border: 1px solid #CCC; }
+.btn-nota:hover { border-color: #333; background-color: #F8F9FA; }
+
+@media (max-width: 900px) {
+    .grid-premium { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   CABEÇALHO MINIMALISTA
+   ========================================= */
+.top-header {
+    width: 100%;
+    padding: 30px 0;
+    background-color: transparent; /* Mude para sua cor de fundo se não for sobre o banner */
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Base para esquerda e direita ocuparem o mesmo espaço */
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right {
+    justify-content: flex-end; /* Ícones grudados na direita */
+}
+
+/* Estilo dos links de texto (Sobre, Loja) */
+.nav-left a {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+/* LOGO CENTRAL - O Coração do Header */
+.logo-central {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Ícones Minimalistas */
+.header-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #8C4B3E; /* Cor fixa marrom */
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.header-icon:hover, .nav-left a:hover {
+    opacity: 0.6;
+}
+
+/* Contador do Carrinho (Pequeno e discreto) */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #55573D; /* Verde da marca */
+    color: #fff;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES MOBILE: LIMPEZA DO HEADER
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Esconde os links da esquerda */
+    .nav-left {
+        display: none !important;
+    }
+
+    /* 2. Esconde Perfil e Busca, mantém o Carrinho */
+    .nav-right .header-icon:not(.cart-trigger) {
+        display: none !important;
+    }
+
+    /* 3. A MÁGICA DA CENTRALIZAÇÃO */
+    .header-container {
+        display: grid !important; /* Mudamos para Grid para controle total */
+        grid-template-columns: 1fr auto 1fr !important; /* 3 colunas iguais */
+        align-items: center;
+    }
+
+    /* Criamos um espaço vazio na esquerda para equilibrar com o carrinho na direita */
+    .header-container::before {
+        content: "";
+        display: block;
+    }
+
+    .logo-central {
+        grid-column: 2; /* Logo sempre na coluna do meio */
+        font-size: 22px;
+        letter-spacing: 5px;
+        margin: 0 auto;
+    }
+
+    .nav-right {
+        grid-column: 3; /* Carrinho na última coluna */
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* =========================================
+   FOOTER E SELOS
+   ========================================= */
+.footer-premium {
+    padding: 60px 5% 30px;
+    background-color: var(--color-bg);
+}
+
+.footer-seals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.1);
+    margin-bottom: 60px;
+}
+
+.seal-item {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8C4B3E;
+    font-weight: 600;
+}
+
+.seal-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(140, 75, 62, 0.2);
+    border-radius: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-brand { flex: 1; }
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #8C4B3E;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: var(--color-text-light);
+    max-width: 250px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: #8C4B3E;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--color-primary); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140, 75, 62, 0.05);
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-brand p { margin: 0 auto; }
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-seals { flex-wrap: wrap; gap: 20px; }
+    .seal-dot { display: none; }
+}
+
+/* =========================================
+   BOTTOM NAV: MENU MOBILE PREMIUM
+   ========================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #F2EFE9; /* Creme Anauá */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(140, 75, 62, 0.1);
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom); /* Ajuste para iPhones novos */
+}
+
+.nav-item span {
+    font-size: 9px !important; /* Tamanho bem pequeno e delicado */
+    text-transform: uppercase; /* Letras maiúsculas para o toque de luxo */
+    letter-spacing: 1px;       /* Espaçamento para não embolar as letras */
+    font-weight: 600;          /* Peso semibold para leitura */
+    margin-top: 4px;           /* Distância entre o ícone e o texto */
+}
+
+/* Esconder o menu no Desktop (já que temos o header no topo) */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-light);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Estilo para o item ativo (onde o usuário está) */
+.nav-item.active {
+    color: #8C4B3E; /* Marrom Anauá */
+}
+
+/* Ajuste caso você queira tirar os emojis depois e usar ícones */
+.nav-item i, .nav-item span {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* Efeito de clique suave */
+.nav-item:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* =========================================
+   INTERAÇÕES DE LOJA: CONTADOR DE ITENS E ANIMAÇÃO
+   ========================================= */
+
+/* Contador de itens no Header */
+#cart-count {
+    background-color: #8C4B3E;
+    color: white;
+    font-size: 10px;
+    font-weight: 600; /* Deixa o número mais nítido */
+    
+    /* O SEGREDO DO CÍRCULO PERFEITO: */
+    width: 18px;           /* Largura fixa */
+    height: 18px;          /* Altura igual à largura */
+    display: flex;         /* Transforma em flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;            /* Remove o padding que causava o oval */
+    border-radius: 50%;    /* Garante a curvatura perfeita */
+    
+    /* Sua animação de luxo continua aqui */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* Animação de pulo quando o item entra */
+.cart-bump {
+    transform: scale(1.4);
+}
+
+/* Efeito no botão Adicionar ao clicar */
+.add-to-cart.added {
+    background-color: #4A6741 !important; /* Verde folha suave para sucesso */
+    color: white;
+}
+
+.add-to-cart.added::after {
+    content: ' ✓';
+}

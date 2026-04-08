@@ -1,0 +1,1144 @@
+/* =========================================
+   HERÓI PREMIUM: LUXO MINIMALISTA
+   ========================================= */
+
+.hero-premium {
+    position: relative;
+    width: 100%;
+    min-height: 90vh; /* Altura imponente, quase a tela toda */
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+/* Linha fina superior para requinte de revista editorial */
+.hero-top-line {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background-color: rgba(140, 75, 62, 0.2);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column-reverse; /* No mobile: foto em cima, texto embaixo */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+/* --- COLUNA DE TEXTO --- */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge de detalhe no topo (Ex: 100% Natural • Pele Brasileira) */
+.hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.badge-text {
+    font-family: var(--font-text);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-text-light);
+    font-weight: var(--weight-semibold);
+}
+
+.badge-dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+/* Título imponente */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    line-height: 1.05;
+    color: #8C4B3E;;
+    margin-bottom: 25px;
+    font-weight: var(--weight-bold);
+    letter-spacing: -1px; /* Deixa as letras mais unidas, padrão de luxo */
+}
+
+/* Misturar itálico no meio do título traz muita sofisticação */
+.title-italic {
+    font-style: italic;
+    font-weight: var(--weight-light);
+    color: #55573D;
+}
+
+/* Descrição minimalista */
+.hero-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: 400px;
+    margin-bottom: 40px;
+    font-weight: var(--weight-light);
+}
+
+/* --- BOTÕES E LINKS --- */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Evita quebrar layout em telas muito finas */
+}
+
+/* Botão mais quadrado e elegante (sem bordas muito redondas) */
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.btn-premium:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Link secundário sublinhado animado */
+.link-minimal {
+    font-size: 12px;
+    color: var(--color-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: var(--weight-medium);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.link-minimal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.link-minimal:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* --- IMAGEM E DETALHES VISUAIS --- */
+.hero-image-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-frame {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efeito Ken Burns (zoom hiper lento na foto) */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 10s ease;
+    display: block;
+}
+
+.image-frame:hover .hero-img {
+    transform: scale(1.05);
+}
+
+/* Texto vertical flutuante (Oculto no celular, brilha no desktop) */
+.floating-detail {
+    position: absolute;
+    right: -20px;
+    bottom: 40px;
+    background-color: #fff;
+    padding: 15px 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    writing-mode: vertical-rl; /* Faz o texto ficar em pé */
+    transform: rotate(180deg);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-light);
+    display: none; 
+}
+
+/* Indicador de rolagem animado (Oculto no celular) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    transform: rotate(-90deg);
+    margin-bottom: 15px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background-color: rgba(140, 75, 62, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    animation: scrollDown 2s infinite cubic-bezier(0.65, 0, 0.35, 1); /* Curva de animação luxuosa */
+}
+
+@keyframes scrollDown {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+    /* =========================================
+   CABEÇALHO MINIMALISTA
+   ========================================= */
+.top-header {
+    width: 100%;
+    padding: 30px 0;
+    background-color: transparent; /* Mude para sua cor de fundo se não for sobre o banner */
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Base para esquerda e direita ocuparem o mesmo espaço */
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right {
+    justify-content: flex-end; /* Ícones grudados na direita */
+}
+
+/* Estilo dos links de texto (Sobre, Loja) */
+.nav-left a {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+/* LOGO CENTRAL - O Coração do Header */
+.logo-central {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Ícones Minimalistas */
+.header-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #8C4B3E; /* Cor fixa marrom */
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.header-icon:hover, .nav-left a:hover {
+    opacity: 0.6;
+}
+
+/* =========================================
+    CONTADOR DO CARRINHO: ANIMAÇÃO DE LUXO
+   ========================================= */
+
+/* Contador do Carrinho (Pequeno e discreto) */
+#cart-count {
+    background-color: #8C4B3E;
+    color: white;
+    font-size: 10px;
+    font-weight: 600; /* Deixa o número mais nítido */
+    
+    /* O SEGREDO DO CÍRCULO PERFEITO: */
+    width: 18px;           /* Largura fixa */
+    height: 18px;          /* Altura igual à largura */
+    display: flex;         /* Transforma em flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;            /* Remove o padding que causava o oval */
+    border-radius: 50%;    /* Garante a curvatura perfeita */
+    
+    /* Sua animação de luxo continua aqui */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animação quando o número aumenta */
+.cart-bump {
+    transform: scale(1.4);
+}
+
+
+
+
+
+/* =========================================
+   AJUSTES MOBILE: LIMPEZA DO HEADER
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Esconde os links da esquerda */
+    .nav-left {
+        display: none !important;
+    }
+
+    /* 2. Esconde Perfil e Busca, mantém o Carrinho */
+    .nav-right .header-icon:not(.cart-trigger) {
+        display: none !important;
+    }
+
+    /* 3. A MÁGICA DA CENTRALIZAÇÃO */
+    .header-container {
+        display: grid !important; /* Mudamos para Grid para controle total */
+        grid-template-columns: 1fr auto 1fr !important; /* 3 colunas iguais */
+        align-items: center;
+    }
+
+    /* Criamos um espaço vazio na esquerda para equilibrar com o carrinho na direita */
+    .header-container::before {
+        content: "";
+        display: block;
+    }
+
+    .logo-central {
+        grid-column: 2; /* Logo sempre na coluna do meio */
+        font-size: 22px;
+        letter-spacing: 5px;
+        margin: 0 auto;
+    }
+
+    .nav-right {
+        grid-column: 3; /* Carrinho na última coluna */
+        justify-content: flex-end;
+    }
+}
+
+/* =========================================
+   GRADE DE PRODUTOS (COLOR-BLOCK)
+   ========================================= */
+.featured-products {
+    padding: 80px 5%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.2);
+    padding-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: var(--color-primary);
+}
+
+/* --- 1. A NOVA ESTRUTURA DO CARROSSEL --- */
+.product-slider-wrapper {
+    overflow-x: auto; /* Permite deslizar no dedo no celular */
+    scroll-behavior: smooth; /* Faz o clique no botão ser suave */
+    padding-bottom: 30px;
+    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+}
+
+.product-slider-wrapper::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+}
+
+.product-slider {
+    display: flex; /* Coloca os produtos em linha, não em grade */
+    gap: 25px;
+}
+
+/* --- 2. O CARD (Mais compacto para caber mais na tela) --- */
+.product-card {
+    min-width: 280px; /* Largura menor para o card não ficar gigante */
+    flex: 0 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo no card */
+}
+
+/* --- 3. A CAIXA COLORIDA (Menor e mais delicada) --- */
+.product-image-bg {
+    width: 100%;
+    height: 300px; /* Reduzi de 320px para 280px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    background-color: #F2EFE9 !important; 
+}
+
+/* --- 4. A IMAGEM DO PRODUTO (Sombra leve e efeito de crescer) --- */
+.product-img-transparent {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1)); 
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-transparent {
+    transform: scale(1.1); /* O frasco cresce levemente ao passar o mouse */
+}
+
+/* --- 5. TEXTOS E PREÇOS --- */
+.product-info h3 {
+    font-size: 15px; /* Fonte menor = mais luxo */
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--color-text);
+    width: 100%;
+    padding: 10px;
+}
+
+.product-price {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #55573D; 
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* --- 6. BOTÃO SECUNDÁRIO (Vazado e fino) --- */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: #8C4B3E;
+    border-color: #8C4B3E;
+    padding: 10px 20px;
+    border-radius: 4px; /* Menos redondo fica mais moderno/editorial */
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%; /* Botão ocupa a largura toda do card, padrão de luxo */
+    max-width: 200px;
+    margin: 0 auto; /* Centraliza o botão */
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary);
+    background-color: #55573D;
+    color: #fff;
+}
+
+/* --- ESTILO DAS SETAS MINIMALISTAS --- */
+/* Container das setas na seção */
+.slider-controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Deixando as setas finas e minimalistas */
+.prev, .next {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 45px;      /* Tamanho chic */
+    font-weight: 100;     /* Linha fina igual ao scroll */
+    cursor: pointer;
+    opacity: 0.4;         /* Discreta */
+    transition: all 0.4s ease;
+    line-height: 1;
+}
+
+.prev:hover, .next:hover {
+    opacity: 1;
+    transform: scale(1.2); /* Cresce suavemente */
+}
+
+/* =========================================
+   ESTILO PARA DESKTOP (Telas Grandes)
+   ========================================= */
+@media (min-width: 992px) {
+    
+    /* 1. Ajuste do Banner */
+    .hero-container {
+        flex-direction: row; /* Foto e texto lado a lado */
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 1600px; /* Permite que o site cresça no seu monitor */
+        margin: 0 auto;    /* Centraliza o site no meio da tela */
+        height: 85vh;
+        gap: 5%;
+    }
+
+    .hero-content {
+        flex: 0 0 45%;
+        text-align: left;
+    }
+
+    /* 2. Tipografia de Luxo (Tamanho Mac) */
+    .hero-title {
+        font-size: 80px; 
+        line-height: 1.1;
+        margin-bottom: 30px;
+    }
+
+    .hero-desc {
+        font-size: 18px;
+        max-width: 500px;
+        line-height: 1.6;
+    }
+
+    /* 3. A Imagem */
+    .hero-image-wrapper {
+        flex: 0 0 50%;
+    }
+
+    .image-frame {
+        height: 75vh;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    /* 4. Elementos de Detalhe */
+    .floating-detail {
+        display: block;
+    }
+
+    .scroll-indicator {
+        display: flex;
+    }
+
+    /* 5. Ajuste dos Produtos no Desktop */
+    .product-slider {
+        gap: 40px; /* Mais respiro entre os produtos */
+    }
+
+    .product-card {
+        min-width: 350px; /* Produtos maiores e mais visíveis */
+    }
+}
+
+/* =========================================
+   SEÇÃO INGREDIENTES: AJUSTE FINAL DESKTOP
+   ========================================= */
+
+/* 1. COMPORTAMENTO DESKTOP */
+.ingredients-section {
+    padding: 80px 5% !important;
+    background-color: var(--color-bg);
+}
+
+.section-header-ingredients {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-bottom: 50px !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.2) !important;
+    width: 100% !important;
+}
+
+.section-header-ingredients h2 {
+    color: #8C4B3E !important; 
+    font-family: var(--font-heading);
+    font-size: 32px;
+    margin-top: 5px;
+}
+
+.ingredients-section .ingredient-controls {
+    display: none !important;
+}
+
+/* Grid Desktop */
+.ingredients-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* --- TAMANHO E EFEITO HOVER (DESKTOP) --- */
+.ingredient-item .ingredient-image {
+    width: 100% !important;
+    /* Reduzi para 260px para ficar mais delicado no Desktop */
+    max-width: 320px !important; 
+    aspect-ratio: 3 / 2 !important; 
+    margin: 0 auto 25px auto !important;
+    border-radius: 20px !important;
+    overflow: hidden !important; /* Essencial para o zoom não sair da borda */
+    background-color: #F2EFE9;
+}
+
+.ingredient-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transição suave para o zoom */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+/* Efeito de Zoom apenas no Desktop */
+@media screen and (min-width: 769px) {
+    .ingredient-item:hover .ingredient-image img {
+        transform: scale(1.1);
+    }
+}
+
+.ingredient-item h3 {
+    color: #8C4B3E !important;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.ingredient-item p {
+    font-family: var(--font-text);
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-text-light);
+    font-weight: var(--weight-semibold);
+    line-height: 1.8;
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 2. COMPORTAMENTO MOBILE (MANTIDO CONFORME APROVADO) */
+@media screen and (max-width: 768px) {
+    .section-header-ingredients {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+    }
+
+    .title-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .ingredients-section .ingredient-controls {
+        display: flex !important;
+    }
+
+    .ingredients-grid {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+        scroll-snap-type: x mandatory;
+    }
+
+    .ingredient-item {
+        min-width: 100% !important;
+        scroll-snap-align: center;
+    }
+
+    .ingredient-item .ingredient-image {
+        max-width: 100% !important;
+        aspect-ratio: 4 / 3 !important; 
+    }
+}
+
+/* =========================================
+   SEÇÃO RITUAL: SENSORIAL E VÍDEO
+   ========================================= */
+
+.ritual-section {
+    padding: 100px 5%;
+    background-color: #F9F7F2; /* Um creme levemente diferente do fundo principal */
+}
+
+.ritual-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* --- LADO DO VÍDEO --- */
+.ritual-video-wrapper {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.ritual-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(140, 75, 62, 0.05); /* Filtro marrom bem suave */
+}
+
+/* --- LADO DO TEXTO --- */
+.ritual-content {
+    flex: 1;
+}
+
+.ritual-badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-primary);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.ritual-title {
+    font-size: 48px;
+    color: #8C4B3E;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.ritual-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: 35px;
+    max-width: 450px;
+}
+
+.ritual-steps {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.ritual-steps li {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #55573D; /* Verde da marca */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 992px) {
+    .ritual-container {
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .ritual-video-wrapper {
+        width: 100%;
+        height: 400px;
+    }
+
+    .ritual-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ritual-title {
+        font-size: 36px;
+    }
+
+    .ritual-desc {
+        margin: 0 auto 30px auto;
+    }
+
+    .ritual-steps {
+        text-align: left;
+        display: inline-block;
+    }
+}
+
+/* =========================================
+   NEWSLETTER: O VERDE DA MARCA
+   ========================================= */
+.newsletter-section {
+    padding: 100px 5%;
+    background-color: #55573D; /* Verde da marca */
+    text-align: center;
+    color: #F2EFE9;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.news-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.news-text {
+    font-size: 15px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.news-form {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid rgba(242, 239, 233, 0.3);
+    padding-bottom: 10px;
+}
+
+.news-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #F2EFE9;
+    font-size: 14px;
+    outline: none;
+}
+
+.news-form input::placeholder { color: rgba(242, 239, 233, 0.5); }
+
+.news-form button {
+    background: transparent;
+    border: none;
+    color: #F2EFE9;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* =========================================
+   INSTAGRAM FEED
+   ========================================= */
+.instagram-section {
+    padding: 100px 0; /* Sangria total nas laterais se desejar */
+    background-color: var(--color-bg);
+}
+
+.insta-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.insta-tag {
+    font-size: 12px;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.insta-title {
+    font-size: 28px;
+    color: #8C4B3E;
+    margin-top: 10px;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px; /* Quase sem gap para parecer um mural */
+}
+
+.insta-item {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s;
+    cursor: pointer;
+}
+
+.insta-item:hover img { opacity: 0.8; }
+
+/* =========================================
+   FOOTER E SELOS
+   ========================================= */
+.footer-premium {
+    padding: 60px 5% 30px;
+    background-color: var(--color-bg);
+}
+
+.footer-seals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.1);
+    margin-bottom: 60px;
+}
+
+.seal-item {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8C4B3E;
+    font-weight: 600;
+}
+
+.seal-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(140, 75, 62, 0.2);
+    border-radius: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-brand { flex: 1; }
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #8C4B3E;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: var(--color-text-light);
+    max-width: 250px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: #8C4B3E;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--color-primary); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140, 75, 62, 0.05);
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-brand p { margin: 0 auto; }
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-seals { flex-wrap: wrap; gap: 20px; }
+    .seal-dot { display: none; }
+}
+
+/* =========================================
+   BOTTOM NAV: MENU MOBILE PREMIUM
+   ========================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #F2EFE9; /* Creme Anauá */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(140, 75, 62, 0.1);
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom); /* Ajuste para iPhones novos */
+}
+
+.nav-item span {
+    font-size: 9px !important; /* Tamanho bem pequeno e delicado */
+    text-transform: uppercase; /* Letras maiúsculas para o toque de luxo */
+    letter-spacing: 1px;       /* Espaçamento para não embolar as letras */
+    font-weight: 600;          /* Peso semibold para leitura */
+    margin-top: 4px;           /* Distância entre o ícone e o texto */
+}
+
+/* Esconder o menu no Desktop (já que temos o header no topo) */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-light);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Estilo para o item ativo (onde o usuário está) */
+.nav-item.active {
+    color: #8C4B3E; /* Marrom Anauá */
+}
+
+/* Ajuste caso você queira tirar os emojis depois e usar ícones */
+.nav-item i, .nav-item span {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* Efeito de clique suave */
+.nav-item:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+

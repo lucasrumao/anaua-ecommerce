@@ -1,0 +1,1430 @@
+/* =========================================
+   CABEÇALHO MINIMALISTA
+   ========================================= */
+.top-header {
+    width: 100%;
+    padding: 30px 0;
+    background-color: transparent; /* Mude para sua cor de fundo se não for sobre o banner */
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Base para esquerda e direita ocuparem o mesmo espaço */
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right {
+    justify-content: flex-end; /* Ícones grudados na direita */
+}
+
+/* Estilo dos links de texto (Sobre, Loja) */
+.nav-left a {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+/* LOGO CENTRAL - O Coração do Header */
+.logo-central {
+    text-decoration: none !important; /* Mata o sublinhado */
+    color: #8C4B3E;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Ícones Minimalistas */
+.header-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #8C4B3E; /* Cor fixa marrom */
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.header-icon:hover, .nav-left a:hover {
+    opacity: 0.6;
+}
+
+/* Contador do Carrinho (Pequeno e discreto) */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #55573D; /* Verde da marca */
+    color: #fff;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES MOBILE: LIMPEZA DO HEADER
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Esconde os links da esquerda */
+    .nav-left {
+        display: none !important;
+    }
+
+    /* 2. Esconde Perfil e Busca, mantém o Carrinho */
+    .nav-right .header-icon:not(.cart-trigger) {
+        display: none !important;
+    }
+
+    /* 3. A MÁGICA DA CENTRALIZAÇÃO */
+    .header-container {
+        display: grid !important; /* Mudamos para Grid para controle total */
+        grid-template-columns: 1fr auto 1fr !important; /* 3 colunas iguais */
+        align-items: center;
+    }
+
+    /* Criamos um espaço vazio na esquerda para equilibrar com o carrinho na direita */
+    .header-container::before {
+        content: "";
+        display: block;
+    }
+
+    .logo-central {
+        grid-column: 2; /* Logo sempre na coluna do meio */
+        font-size: 22px;
+        letter-spacing: 5px;
+        margin: 0 auto;
+    }
+
+    .nav-right {
+        grid-column: 3; /* Carrinho na última coluna */
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+
+
+
+
+/* CONTAINER PRINCIPAL DO PERFIL */
+.profile-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    min-height: 60vh;
+}
+
+/* MENU LATERAL (SIDEBAR) */
+.profile-sidebar {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    height: fit-content;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EAEaea;
+}
+
+/* ÁREA DA FOTO E UPLOAD */
+.profile-avatar-container {
+    position: relative; /* Para o ícone de upload grudar nela */
+    width: 50px;
+    height: 50px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    background-color: #EAEaea; /* Cinza claro para placeholder */
+    color: #999;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Inria Serif', serif;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Não distorce a foto */
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Ícone de Câmera (Upload) */
+.avatar-upload-label {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background-color: #4A6741;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.avatar-upload-label:hover {
+    background-color: #3A5233;
+    transform: scale(1.1);
+}
+
+.profile-greeting p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.profile-greeting h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+}
+
+/* NAVEGAÇÃO */
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-nav a:hover {
+    background-color: #F9F4EF;
+    color: #4A6741;
+}
+
+.profile-nav a.active {
+    background-color: #F9F4EF;
+    color: #4A6741;
+    font-weight: 600;
+    border-left: 3px solid #4A6741;
+}
+
+.profile-nav .logout-link {
+    color: #8C4B3E;
+    margin-top: 20px;
+}
+
+.profile-nav .logout-link:hover {
+    background-color: #FFF0ED;
+}
+
+/* ÁREA CENTRAL DE CONTEÚDO */
+.profile-content {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* Lógica de Abas (Esconde o conteúdo) */
+.tab-content {
+    display: none; /* Escondido por padrão */
+}
+
+.tab-content.active {
+    display: block; /* Mostra apenas o ativo */
+}
+
+.content-title {
+    font-family: 'Inria Serif', serif;
+    color: #4A6741;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.content-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EAEaea;
+}
+
+/* FORMULÁRIO DO PERFIL */
+.profile-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-form .input-group {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.profile-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E6D8CA;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.profile-form input:focus {
+    border-color: #4A6741;
+}
+
+/* Estilo para campos bloqueados (readonly) */
+
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #EAEaea;
+}
+
+/* BOTÕES GERAIS */
+.btn-secondary {
+    background-color: transparent;
+    color: #4A6741;
+    border: 1px solid #4A6741;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #F9F4EF;
+}
+
+.btn-primary {
+    background-color: #4A6741;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3A5233;
+}
+
+/* Placeholder para abas vazias */
+.pedidos-placeholder {
+    text-align: center;
+    padding: 60px 0;
+    color: #999;
+}
+
+.pedidos-placeholder svg {
+    margin-bottom: 20px;
+}
+
+.pedidos-placeholder a {
+    color: #4A6741;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 20px auto;
+    }
+
+    .profile-sidebar {
+        padding: 20px;
+    }
+    
+    .profile-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .profile-content {
+        padding: 20px;
+    }
+
+    .profile-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .profile-form .input-group[style] {
+        max-width: 100% !important;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+        padding-top: 20px;
+    }
+
+    .btn-secondary, .btn-primary {
+        width: 100%;
+    }
+}
+
+
+
+
+/* BOTÕES DE SELEÇÃO (RADIOS) - LINHA 5 */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap; /* Quebra a linha no celular se precisar */
+    gap: 20px;
+    margin-top: 10px;
+    padding: 8px 0;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+    font-weight: 400 !important; /* Tira o negrito padrão dos labels */
+}
+
+/* Deixa a bolinha de seleção com a cor da marca */
+.radio-label input[type="radio"] {
+   width: 15px; /* Diminuído para equilibrar com o texto */
+    height: 15px; /* Diminuído para equilibrar com o texto */
+    accent-color: #4A6741;
+    cursor: pointer;
+    margin: 0;
+    vertical-align: middle; /* Ajuda no alinhamento vertical */
+}
+
+
+
+/* =========================================
+   CAIXA MODAL (POP-UP DE EDIÇÃO)
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px); /* Embaça o fundo do site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Escondido por padrão com animação */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe que o JS vai adicionar para mostrar a modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    
+    /* Efeito de subir ao aparecer */
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EAEaea;
+    padding-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-family: 'Inria Serif', serif;
+    color: #4A6741;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #8C4B3E;
+}
+
+.modal-body p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ESTILOS DOS CAMPOS DENTRO DA MODAL */
+.modal-input-field {
+    width: 100%;
+    padding: 14px 15px; /* Deixa a caixinha alta e confortável */
+    border: 1px solid #E6D8CA;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Evita que o campo vaze pra fora da caixa */
+}
+
+.modal-input-field:focus {
+    border-color: #4A6741;
+}
+
+/* Ajuste fino dos botões na modal para mobile */
+@media (max-width: 576px) {
+    .modal-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    .modal-actions button {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   TELA DE MEUS PEDIDOS (FILTROS E CARDS)
+   ========================================================================== */
+
+/* Barra de Ferramentas */
+.pedidos-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para telas menores */
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box svg {
+    position: absolute;
+    left: 12px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #E6D8CA;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.filters-box {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 12px 15px;
+    border: 1px solid #E6D8CA;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* O Card do Pedido */
+.pedido-card {
+    border: 1px solid #EAEaea;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    overflow: hidden; /* Mantém as bordas arredondadas limpas */
+}
+
+/* Cabeçalho do Card (Fundo mais escurinho) */
+.pedido-header {
+    background-color: #faf8f5;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EAEaea;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pedido-info-topo {
+    display: flex;
+    gap: 30px;
+}
+
+.pedido-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.pedido-valor {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Badges de Status (As etiquetas coloridas) */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.badge-success { background-color: #e6f4ea; color: #1e8e3e; } /* Verde */
+.badge-warning { background-color: #fef7e0; color: #b06000; } /* Amarelo */
+.badge-danger  { background-color: #fce8e6; color: #d93025; } /* Vermelho */
+
+/* Corpo do Card (Onde ficam os produtos) */
+.pedido-body {
+    padding: 20px;
+}
+
+.pedido-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.produto-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.produto-img-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 1px solid #EAEaea;
+}
+
+.produto-detalhes {
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-nome {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.produto-qtd {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Rodapé do Card (Botões) */
+.pedido-actions {
+    padding: 15px 20px;
+    border-top: 1px solid #EAEaea;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #E6D8CA;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    border-color: #4F6D46; /* Seu verde */
+    color: #4F6D46;
+}
+
+.btn-primary-small {
+    background-color: #4F6D46; /* Seu verde principal */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-primary-small:hover {
+    background-color: #3b5234;
+}
+
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ABA: ENDEREÇOS (CARDS E GRID)
+   ========================================================================== */
+.enderecos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.enderecos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.endereco-card {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.endereco-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+/* O "Destaque" do endereço principal */
+.endereco-card.principal {
+    border: 2px solid #4F6D46; /* Borda verde */
+    box-shadow: 0 8px 20px rgba(79, 109, 70, 0.08);
+}
+
+.endereco-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.endereco-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #E8F5E9;
+    color: #4F6D46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-principal {
+    background-color: #4F6D46;
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.endereco-titulo {
+    font-family: 'Inria Serif', serif;
+    font-size: 1.3rem;
+    color: #222;
+    margin: 0 0 10px 0;
+}
+
+.endereco-texto {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1; /* Empurra os botões lá pro fundo do card */
+}
+
+.endereco-acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #F0F0F0;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #4F6D46;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+.btn-link:hover { text-decoration: underline; color: #3b5234; }
+
+/* O Card especial de Adicionar */
+.card-adicionar {
+    border: 2px dashed #D0D0D0;
+    background: transparent;
+    box-shadow: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+}
+.card-adicionar:hover {
+    border-color: #4F6D46;
+    color: #4F6D46;
+    background: #FAFAFA;
+}
+.card-adicionar .add-icone { margin-bottom: 15px; transition: transform 0.2s; }
+.card-adicionar:hover .add-icone { transform: scale(1.1); stroke: #4F6D46; }
+
+/* Para organizar os campos no modal */
+.form-row-custom {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .form-row-custom { flex-direction: column; gap: 0; }
+}
+
+/* ==========================================================================
+   ABA: ENDEREÇOS (CARDS E GRID)
+   ========================================================================== */
+.enderecos-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; }
+.enderecos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+
+.endereco-card { background: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 16px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02); display: flex; flex-direction: column; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+.endereco-card:hover { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); transform: translateY(-2px); }
+
+.endereco-card.principal { border: 2px solid #4F6D46; box-shadow: 0 8px 20px rgba(79, 109, 70, 0.08); }
+.endereco-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.endereco-icone { width: 40px; height: 40px; border-radius: 50%; background: #E8F5E9; color: #4F6D46; display: flex; align-items: center; justify-content: center; }
+
+.badge-principal { background-color: #4F6D46; color: #FFF; font-size: 0.75rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; }
+.endereco-titulo { font-family: 'Inria Serif', serif; font-size: 1.3rem; color: #222; margin: 0 0 10px 0; }
+.endereco-texto { color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0; flex-grow: 1; }
+
+.endereco-acoes { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; padding-top: 15px; border-top: 1px solid #F0F0F0; }
+.btn-link { background: none; border: none; color: #4F6D46; font-weight: 600; font-size: 0.9rem; cursor: pointer; padding: 0; transition: color 0.2s; }
+.btn-link:hover { text-decoration: underline; color: #3b5234; }
+
+.card-adicionar { border: 2px dashed #D0D0D0; background: transparent; box-shadow: none; align-items: center; justify-content: center; text-align: center; cursor: pointer; color: #666; font-weight: 500; }
+.card-adicionar:hover { border-color: #4F6D46; color: #4F6D46; background: #FAFAFA; }
+.card-adicionar .add-icone { margin-bottom: 15px; transition: transform 0.2s; }
+.card-adicionar:hover .add-icone { transform: scale(1.1); stroke: #4F6D46; }
+
+.form-row-custom { display: flex; gap: 15px; flex-wrap: wrap; }
+@media (max-width: 600px) { .form-row-custom { flex-direction: column; gap: 0; } }
+
+
+
+
+
+/* =========================================================
+   CONTROLE INTELIGENTE DE BOTÕES DO ENDEREÇO
+   ========================================================= */
+.endereco-card.principal .btn-tornar-principal { display: none !important; }
+.endereco-card.principal .btn-excluir { display: none !important; }
+.endereco-card.principal .badge-principal { display: inline-block !important; }
+.endereco-card:not(.principal) .badge-principal { display: none !important; }
+
+/* Cores dos ícones baseados no status */
+.endereco-card.principal .endereco-icone { background: #E8F5E9 !important; color: #4F6D46 !important; }
+.endereco-card:not(.principal) .endereco-icone { background: #F0F0F0 !important; color: #888 !important; }
+
+/* =========================================================
+   1. SELETOR DE ÍCONES PREMIUM (FORMULÁRIO)
+   ========================================================= */
+/* SELETOR CUSTOMIZADO (MINI-MENU DENTRO DO INPUT) */
+.custom-select-wrapper { position: relative; width: 100%; }
+
+.custom-select-trigger {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 15px; background: #FFF; border: 1px solid #EAEAEA;
+    border-radius: 8px; cursor: pointer; font-size: 0.95rem; color: #333;
+}
+
+.custom-options {
+    position: absolute; top: 100%; left: 0; right: 0; background: #FFF;
+    border: 1px solid #EAEAEA; border-radius: 8px; margin-top: 5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: none; z-index: 100;
+    max-height: 200px; overflow-y: auto;
+}
+
+.custom-options.open { display: block; }
+
+.custom-option {
+    padding: 10px 15px; display: flex; align-items: center; gap: 10px;
+    cursor: pointer; transition: background 0.2s;
+}
+.custom-option:hover { background: #F9FCF9; color: #4F6D46; }
+.custom-option svg { stroke: #999; }
+.custom-option:hover svg { stroke: #4F6D46; }
+
+/* REGRA DO LIMITE (3 endereços) */
+/* O JS vai contar os cards e se tiver 3, adiciona essa classe no grid */
+.enderecos-grid.limite-atingido #card-add-endereco { display: none !important; }
+
+.msg-limite {
+    display: none; padding: 15px; background: #F8F9FA; border-radius: 8px;
+    border: 1px dashed #CCC; text-align: center; color: #888; font-size: 0.9rem;
+}
+.enderecos-grid.limite-atingido + .msg-limite { display: block; margin-top: 20px; }
+
+
+
+
+
+
+
+
+/* =========================================
+   SEÇAO DE FAVORITOS (GRID E CARDS)
+   ========================================= */
+
+
+
+/* GRID DE FAVORITOS */
+.favoritos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* CARD DE PRODUTO */
+.favorito-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorito-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* CONTAINER DA IMAGEM */
+.fav-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.fav-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.favorito-card:hover .fav-image-container img {
+    transform: scale(1.08);
+}
+
+/* BOTÃO DE REMOVER (ÍCONE DE SALVAR) */
+.btn-remove-fav {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.btn-remove-fav:hover {
+    background: #fff;
+    color: #dc3545;
+}
+
+/* INFO DO PRODUTO */
+.fav-info {
+    padding: 15px;
+}
+
+.fav-categoria {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fav-nome {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0 12px 0;
+    font-weight: 600;
+}
+
+.fav-preco-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fav-preco {
+    font-weight: 700;
+    color: #4F6D46; /* Seu verde padrão */
+    font-size: 1.1rem;
+}
+
+/* BOTÃO ADICIONAR CARRINHO */
+.btn-add-cart {
+    background: #f0f4ef;
+    border: none;
+    color: #4F6D46;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-add-cart:hover {
+    background: #4F6D46;
+    color: #fff;
+}
+
+
+/* ÍCONE DE FAVORITOS (Estado Ativo/Selecionado) */
+.btn-remove-fav {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Mudança aqui: cor verde e preenchimento */
+    color: #4F6D46; 
+    transition: all 0.2s ease;
+}
+
+.btn-remove-fav svg {
+    /* Faz o ícone nascer pintado por dentro */
+    fill: #4F6D46; 
+}
+
+.btn-remove-fav:hover {
+    background: #fff;
+    transform: scale(1.1);
+    color: #8C4B3E; /* Muda para vermelho no hover pra indicar "excluir" */
+}
+
+.btn-remove-fav:hover svg {
+    fill: #8C4B3E;
+}
+
+.fav-nome-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.fav-nome-link:hover .fav-nome {
+    color: #4F6D46; /* Muda levemente a cor no hover */
+}
+
+
+
+
+
+/* CONTAINER DA IMAGEM (Com o fundo da Loja) */
+.fav-image-container {
+    position: relative;
+    height: 250px; /* Altura um pouco maior para valorizar o produto */
+    background-color: #F2EFE9; /* Troque pela cor exata da sua Loja (ex: #f4f4f4) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Isso cria o respiro em volta do produto */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fav-image-container img {
+    max-width: 90%; /* Garante que o produto nunca encoste nas bordas */
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Fundamental: mantém a proporção sem cortar */
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom sutil só no produto ao passar o mouse */
+.favorito-card:hover .fav-image-container img {
+    transform: scale(1.1);
+}
+
+
+
+
+
+/* =========================================
+   FOOTER E SELOS
+   ========================================= */
+.footer-premium {
+    padding: 60px 5% 30px;
+    background-color: var(--color-bg);
+}
+
+.footer-seals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(140, 75, 62, 0.1);
+    margin-bottom: 60px;
+}
+
+.seal-item {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8C4B3E;
+    font-weight: 600;
+}
+
+.seal-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(140, 75, 62, 0.2);
+    border-radius: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-brand { flex: 1; }
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #8C4B3E;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: var(--color-text-light);
+    max-width: 250px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: #8C4B3E;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--color-primary); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140, 75, 62, 0.05);
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-brand p { margin: 0 auto; }
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-seals { flex-wrap: wrap; gap: 20px; }
+    .seal-dot { display: none; }
+}
+
+/* =========================================
+   BOTTOM NAV: MENU MOBILE PREMIUM
+   ========================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #F2EFE9; /* Creme Anauá */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(140, 75, 62, 0.1);
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom); /* Ajuste para iPhones novos */
+}
+
+.nav-item span {
+    font-size: 9px !important; /* Tamanho bem pequeno e delicado */
+    text-transform: uppercase; /* Letras maiúsculas para o toque de luxo */
+    letter-spacing: 1px;       /* Espaçamento para não embolar as letras */
+    font-weight: 600;          /* Peso semibold para leitura */
+    margin-top: 4px;           /* Distância entre o ícone e o texto */
+}
+
+/* Esconder o menu no Desktop (já que temos o header no topo) */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-light);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Estilo para o item ativo (onde o usuário está) */
+.nav-item.active {
+    color: #8C4B3E; /* Marrom Anauá */
+}
+
+/* Ajuste caso você queira tirar os emojis depois e usar ícones */
+.nav-item i, .nav-item span {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* Efeito de clique suave */
+.nav-item:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* --- BREADCRUMB --- */
+.breadcrumb {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+/* =========================================
+   INTERAÇÕES DE LOJA: CONTADOR DE ITENS E ANIMAÇÃO
+   ========================================= */
+
+/* Contador de itens no Header */
+#cart-count {
+    background-color: #8C4B3E;
+    color: white;
+    font-size: 10px;
+    font-weight: 600; /* Deixa o número mais nítido */
+    
+    /* O SEGREDO DO CÍRCULO PERFEITO: */
+    width: 18px;           /* Largura fixa */
+    height: 18px;          /* Altura igual à largura */
+    display: flex;         /* Transforma em flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;            /* Remove o padding que causava o oval */
+    border-radius: 50%;    /* Garante a curvatura perfeita */
+    
+    /* Sua animação de luxo continua aqui */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* Animação de pulo quando o item entra */
+.cart-bump {
+    transform: scale(1.4);
+}
+
+/* Efeito no botão Adicionar ao clicar */
+.add-to-cart.added {
+    background-color: #4A6741 !important; /* Verde folha suave para sucesso */
+    color: white;
+}
+
+.add-to-cart.added::after {
+    content: ' ✓';
+}

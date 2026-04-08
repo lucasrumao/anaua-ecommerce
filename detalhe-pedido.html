@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F9F4EF">
+    <title>Detalhes do Pedido - Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/detalhe-pedido.css">
+    <link rel="stylesheet" href="css/pages/cart-sidebar.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <link rel="shortcut icon" href="assets/icons/logo.png" type="image/x-icon">
+    
+</head>
+
+<body>
+
+
+ <header class="top-header" style="border-bottom: 1px solid #E6D8CA;"> 
+    <div class="header-container">
+        <nav class="nav-left">
+            <a href="sobre.html">Sobre</a>
+            <a href="loja.html">Loja</a>
+        </nav>
+
+        <a href="index.html" class="logo-central">
+            ANAUÁ
+        </a>
+
+        <div class="nav-right">
+            <a href="login.html" class="header-icon" title="Perfil">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <button class="header-icon" title="Buscar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <button class="header-icon cart-trigger" title="Carrinho">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count" class="cart-badge">0</span>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+    <div class="container-detalhe">
+        
+        <a href="perfil.html" class="link-voltar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Voltar para Meus Pedidos
+        </a>
+
+        <div class="header-pedido">
+            <div>
+                <h1 id="txt-numero-pedido">Carregando pedido...</h1>
+                <p id="txt-data-pedido">--</p>
+            </div>
+            <div id="badge-status" class="badge-status-master">
+                --
+            </div>
+        </div>
+
+        <div class="grid-premium">
+            
+            <div>
+                <div class="card-premium">
+                    <h2 class="card-titulo">Acompanhamento</h2>
+                    <div class="timeline-vertical" id="container-timeline">
+                        </div>
+                </div>
+
+                <div class="card-premium">
+                    <h2 class="card-titulo" id="txt-qtd-itens">Itens do Pedido (0)</h2>
+                    <div id="container-produtos">
+                        </div>
+
+                    <div class="acoes-container">
+                        <button class="btn-acao btn-comprar" id="btn-comprar-novamente">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            <span>Comprar Novamente</span>
+                        </button>
+                        <button class="btn-acao btn-nota" id="btn-baixar-nota">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Baixar Nota Fiscal</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card-premium">
+                    <h2 class="card-titulo">Detalhes da Entrega</h2>
+                    <div class="info-bloco">
+                        <span class="info-label">Endereço de Entrega</span>
+                        <p class="info-texto" id="txt-endereco-completo">--</p>
+                    </div>
+                    <div style="height: 1px; background-color: #F0F0F0; margin: 20px 0;"></div>
+                    <div class="info-bloco">
+                        <span class="info-label">Logística</span>
+                        <p class="info-texto">
+                            <span id="txt-tipo-frete">--</span><br>
+                            Código: <strong style="color: #4F6D46;" id="txt-codigo-rastreio">--</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-premium">
+                    <h2 class="card-titulo">Resumo da Compra</h2>
+                    <div class="resumo-linha">
+                        <span>Subtotal dos produtos</span>
+                        <span id="txt-subtotal">--</span>
+                    </div>
+                    <div class="resumo-linha">
+                        <span>Frete</span>
+                        <span style="color: #2E7D32; font-weight: 500;" id="txt-valor-frete">--</span>
+                    </div>
+                    <div class="resumo-linha">
+                        <span id="txt-nome-desconto">Descontos</span>
+                        <span style="color: #8C4B3E;" id="txt-valor-desconto">--</span>
+                    </div>
+                    <div class="resumo-total">
+                        <span>Total Pago</span>
+                        <span id="txt-total-pago">--</span>
+                    </div>
+
+                    <div style="margin-top: 25px;">
+                        <span class="info-label">Forma de Pagamento</span>
+                        <div class="metodo-pagamento">
+                            <div class="icone-cartao" id="txt-bandeira-cartao">--</div>
+                            <div>
+                                <p class="info-texto" style="font-weight: 600;" id="txt-resumo-cartao">--</p>
+                                <p style="margin: 2px 0 0 0; color: #888; font-size: 0.85rem;" id="txt-parcelamento">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="tpl-timeline-item">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-data">
+                <div>
+                    <h4 class="tl-titulo">--</h4>
+                    <p class="tl-descricao">--</p>
+                </div>
+                <span class="timeline-hora tl-hora">--</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-produto-linha">
+        <div class="produto-linha">
+            <div class="produto-img prd-icone">📦</div>
+            <div class="produto-info">
+                <h4 class="prd-nome">--</h4>
+                <p>Vendido e entregue por: <strong class="prd-vendedor">--</strong></p>
+            </div>
+            <div class="produto-valores">
+                <span class="qtd prd-qtd">--</span>
+                <span class="preco prd-preco">--</span>
+            </div>
+        </div>
+    </template>
+
+
+
+
+
+    <div id="cart-sidebar" class="cart-sidebar">
+    
+    <div class="cart-header">
+        <button id="close-cart" class="close-btn">&times;</button>
+        <h3>Meu Carrinho</h3>
+    </div>
+    
+    <div id="cart-items-container">
+        </div>
+
+    <div class="shipping-section">
+        <p id="free-shipping-msg">Faltam R$ 0,00 para Frete Grátis!</p>
+        <div class="progress-container">
+            <div id="shipping-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="cep-input-group">
+            <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
+            <button id="calc-cep-btn">Calcular</button>
+        </div>
+        <p id="shipping-result"></p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-summary" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">R$ 0,00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Frete:</span>
+                <span id="cart-shipping-value">R$ 0,00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: bold; color: #333; padding-top: 10px; border-top: 1px solid #eee;">
+                <span>Total:</span>
+                <span id="cart-sidebar-total">R$ 0,00</span>
+            </div>
+        </div>
+        
+        <button id="btn-checkout-mp" class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+</div> <div id="cart-overlay" class="cart-overlay"></div>
+
+
+
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // =========================================================
+            // 1. CONEXÃO COM O BANCO DE DADOS (API)
+            // =========================================================
+            function carregarDetalhesDoPedido(idPedido) {
+                
+                // TODO: O Back-end vai descomentar este bloco para puxar os dados reais
+                /*
+                fetch(`https://api.sualoja.com.br/pedidos/${idPedido}`)
+                    .then(resposta => resposta.json())
+                    .then(pedido => {
+                        
+                        // 1. Preenche os textos principais
+                        document.getElementById('txt-numero-pedido').innerText = `Pedido #PD-${pedido.id}`;
+                        document.getElementById('txt-data-pedido').innerText = `Realizado em ${pedido.dataHora}`;
+                        document.getElementById('txt-endereco-completo').innerHTML = `<strong>Lucas Rumão</strong><br>${pedido.endereco}`;
+                        document.getElementById('txt-tipo-frete').innerText = pedido.frete.tipo;
+                        document.getElementById('txt-codigo-rastreio').innerText = pedido.frete.rastreio;
+                        document.getElementById('txt-subtotal').innerText = pedido.valores.subtotal;
+                        document.getElementById('txt-valor-frete').innerText = pedido.frete.valor;
+                        document.getElementById('txt-valor-desconto').innerText = pedido.valores.desconto;
+                        document.getElementById('txt-total-pago').innerText = pedido.valores.total;
+                        document.getElementById('txt-bandeira-cartao').innerText = pedido.pagamento.bandeira;
+                        document.getElementById('txt-resumo-cartao').innerText = pedido.pagamento.resumo;
+                        document.getElementById('txt-parcelamento').innerText = pedido.pagamento.parcelas;
+                        document.getElementById('txt-qtd-itens').innerText = `Itens do Pedido (${pedido.produtos.length})`;
+
+                        // 2. Preenche o Badge de Status
+                        const badge = document.getElementById('badge-status');
+                        badge.innerHTML = `${pedido.status.icone} ${pedido.status.texto}`;
+                        badge.className = `badge-status-master badge-${pedido.status.id}`;
+
+                        // 3. Monta a Linha do Tempo
+                        const containerTimeline = document.getElementById('container-timeline');
+                        const tplTimeline = document.getElementById('tpl-timeline-item');
+                        containerTimeline.innerHTML = ''; 
+                        
+                        pedido.timeline.forEach(passo => {
+                            const clone = tplTimeline.content.cloneNode(true);
+                            clone.querySelector('.tl-titulo').innerText = passo.titulo;
+                            clone.querySelector('.tl-descricao').innerHTML = passo.descricao;
+                            clone.querySelector('.tl-hora').innerText = passo.hora;
+                            if(passo.ativo) clone.querySelector('.timeline-item').classList.add('active');
+                            containerTimeline.appendChild(clone);
+                        });
+
+                        // 4. Monta a Lista de Produtos
+                        const containerProdutos = document.getElementById('container-produtos');
+                        const tplProduto = document.getElementById('tpl-produto-linha');
+                        containerProdutos.innerHTML = ''; 
+                        
+                        pedido.produtos.forEach(prod => {
+                            const clone = tplProduto.content.cloneNode(true);
+                            clone.querySelector('.prd-icone').innerText = prod.icone;
+                            clone.querySelector('.prd-nome').innerText = prod.nome;
+                            clone.querySelector('.prd-vendedor').innerText = prod.vendedor;
+                            clone.querySelector('.prd-qtd').innerText = prod.qtd;
+                            clone.querySelector('.prd-preco').innerText = prod.preco;
+                            containerProdutos.appendChild(clone);
+                        });
+
+                    })
+                    .catch(erro => {
+                        console.error("Erro ao carregar o pedido:", erro);
+                        alert("Não foi possível carregar os detalhes do pedido.");
+                    });
+                */
+            }
+
+            // =========================================================
+            // 2. AÇÕES DOS BOTÕES (Prontos para o Back-end)
+            // =========================================================
+            const btnComprar = document.getElementById('btn-comprar-novamente');
+            const btnNota = document.getElementById('btn-baixar-nota');
+
+            if(btnComprar) {
+                btnComprar.addEventListener('click', function() {
+                    const textoOriginal = this.innerHTML;
+                    this.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Adicionado!</span>`;
+                    this.style.backgroundColor = "#2E7D32"; 
+                    
+                    // TODO: Back-end vai disparar a função de adicionar ao carrinho aqui
+                    
+                    setTimeout(() => {
+                        this.innerHTML = textoOriginal;
+                        this.style.backgroundColor = ""; 
+                    }, 1500);
+                });
+            }
+
+            if(btnNota) {
+                btnNota.addEventListener('click', function() {
+                    const textoOriginal = this.innerHTML;
+                    this.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> <span>Gerando PDF...</span>`;
+                    
+                    // TODO: Back-end vai disparar a rota de download da NFe aqui
+                    
+                    setTimeout(() => {
+                        this.innerHTML = textoOriginal;
+                    }, 2000);
+                });
+            }
+
+            // Pega o ID da URL (ex: detalhe-pedido.html?id=8472910) e pede pro banco carregar
+            const urlParams = new URLSearchParams(window.location.search);
+            const pedidoId = urlParams.get('id');
+            if (pedidoId) {
+                carregarDetalhesDoPedido(pedidoId);
+            }
+
+        });
+    </script>
+
+</body>
+
+
+<footer class="footer-premium">
+    <div class="footer-seals">
+        <div class="seal-item"><span>Vegan</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Cruelty Free</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Ativos Amazônicos</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Eco Friendly</span></div>
+    </div>
+
+
+
+ <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#" class="footer-logo">ANAUÁ</a>
+            <p>Conectando sua pele à essência pura da natureza brasileira.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <a href="loja.html">Loja</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="perfil.html">Perfil</a>
+                <a href="sobre.html">Carrinho</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <a href="envio.html">Envio e Entrega</a>
+                <a href="trocas.html">Trocas e Devoluções</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Anauá Cosméticos. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+   <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Início</span>
+    </a>
+    <a href="loja.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+        <span>Loja</span>
+    </a>
+    <a href="busca.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <span>Busca</span>
+    </a>
+    <a href="perfil.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Perfil</span>
+    </a>
+</nav>
+
+    
+    <script src="js/cart.js"></script>
+    <script src="js/sidebar-cart.js"></script>
+
+</html>

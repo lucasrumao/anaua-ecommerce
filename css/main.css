@@ -1,0 +1,65 @@
+/* --- Variáveis Globais --- */
+:root {
+    /* Tons de Fundo (Seus códigos do Figma) */
+    --color-bg: #F9F6EF;        /* Fundo limpo */
+    --color-bg-alt: #F7E8D6;    /* Bege médio */
+    --color-card: #FBF0D7;      /* Cor dos produtos */
+    
+    /* Cores de Destaque */
+    --color-primary: #8C4B3E;   /* O Marrom Terracota (Riqueza) */
+    --color-secondary: #55573D; /* O Verde (A floresta) */
+    
+    --color-text: #2D2D2D;
+    --color-text-light: #6D6D6D;
+}
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-text);
+    font-weight: var(--weight-medium); /* Inter Medium como padrão para textos */
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding-bottom: 70px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Títulos e Destaques --- */
+h1, h2, h3, h4, .logo {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold); /* Inria Serif Bold para destaques */
+}
+
+/* Exemplo de uso da Inter Semibold ou Light (pode adicionar onde precisar) */
+.product-price {
+    font-weight: var(--weight-semibold);
+}
+
+.product-desc {
+    font-weight: var(--weight-light);
+}
+
+/* --- Botões Globais --- */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 20px; /* Bordas arredondadas do seu design */
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    min-height: 44px; /* Área de toque acessível para mobile */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
