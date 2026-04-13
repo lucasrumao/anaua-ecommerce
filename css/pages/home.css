@@ -247,74 +247,7 @@
     100% { top: 100%; }
 }
 
-    /* =========================================
-   CABEÇALHO MINIMALISTA
-   ========================================= */
-.top-header {
-    width: 100%;
-    padding: 30px 0;
-    background-color: transparent; /* Mude para sua cor de fundo se não for sobre o banner */
-}
-
-.header-container {
-    width: 90%;
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Base para esquerda e direita ocuparem o mesmo espaço */
-.nav-left, .nav-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-right {
-    justify-content: flex-end; /* Ícones grudados na direita */
-}
-
-/* Estilo dos links de texto (Sobre, Loja) */
-.nav-left a {
-    text-decoration: none !important; /* Mata o sublinhado */
-    color: #8C4B3E;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
-    transition: opacity 0.3s;
-}
-
-/* LOGO CENTRAL - O Coração do Header */
-.logo-central {
-    text-decoration: none !important; /* Mata o sublinhado */
-    color: #8C4B3E;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-/* Ícones Minimalistas */
-.header-icon {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #8C4B3E; /* Cor fixa marrom */
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-decoration: none !important;
-}
-
-.header-icon:hover, .nav-left a:hover {
-    opacity: 0.6;
-}
+    
 
 /* =========================================
     CONTADOR DO CARRINHO: ANIMAÇÃO DE LUXO
@@ -348,50 +281,6 @@
     transform: scale(1.4);
 }
 
-
-
-
-
-/* =========================================
-   AJUSTES MOBILE: LIMPEZA DO HEADER
-   ========================================= */
-
-@media (max-width: 768px) {
-    /* 1. Esconde os links da esquerda */
-    .nav-left {
-        display: none !important;
-    }
-
-    /* 2. Esconde Perfil e Busca, mantém o Carrinho */
-    .nav-right .header-icon:not(.cart-trigger) {
-        display: none !important;
-    }
-
-    /* 3. A MÁGICA DA CENTRALIZAÇÃO */
-    .header-container {
-        display: grid !important; /* Mudamos para Grid para controle total */
-        grid-template-columns: 1fr auto 1fr !important; /* 3 colunas iguais */
-        align-items: center;
-    }
-
-    /* Criamos um espaço vazio na esquerda para equilibrar com o carrinho na direita */
-    .header-container::before {
-        content: "";
-        display: block;
-    }
-
-    .logo-central {
-        grid-column: 2; /* Logo sempre na coluna do meio */
-        font-size: 22px;
-        letter-spacing: 5px;
-        margin: 0 auto;
-    }
-
-    .nav-right {
-        grid-column: 3; /* Carrinho na última coluna */
-        justify-content: flex-end;
-    }
-}
 
 /* =========================================
    GRADE DE PRODUTOS (COLOR-BLOCK)
@@ -975,170 +864,44 @@
 
 .insta-item:hover img { opacity: 0.8; }
 
+
+
+
+
 /* =========================================
-   FOOTER E SELOS
+   ESTILOS DA BUSCA E HISTÓRICO
    ========================================= */
-.footer-premium {
-    padding: 60px 5% 30px;
-    background-color: var(--color-bg);
-}
-
-.footer-seals {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(140, 75, 62, 0.1);
-    margin-bottom: 60px;
-}
-
-.seal-item {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #8C4B3E;
-    font-weight: 600;
-}
-
-.seal-dot {
-    width: 4px;
-    height: 4px;
-    background: rgba(140, 75, 62, 0.2);
-    border-radius: 50%;
-}
-
-.footer-container {
+.section-header-search {
     display: flex;
     justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
-.footer-brand { flex: 1; }
-.footer-logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: #8C4B3E;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    color: var(--color-text-light);
-    max-width: 250px;
-}
-
-.footer-links {
+.history-tags {
     display: flex;
-    gap: 80px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.footer-col h4 {
-    font-size: 14px;
+.history-tag {
+    background: rgba(140, 75, 62, 0.08);
     color: #8C4B3E;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-col a {
-    display: block;
-    text-decoration: none;
-    color: var(--color-text-light);
-    font-size: 14px;
-    margin-bottom: 12px;
-    transition: color 0.3s;
-}
-
-.footer-col a:hover { color: var(--color-primary); }
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 80px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(140, 75, 62, 0.05);
+    padding: 8px 16px;
+    border-radius: 30px;
     font-size: 12px;
-    color: var(--color-text-light);
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* --- RESPONSIVO --- */
-@media (max-width: 768px) {
-    .insta-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
-    .footer-brand p { margin: 0 auto; }
-    .footer-links { flex-direction: column; gap: 30px; }
-    .footer-seals { flex-wrap: wrap; gap: 20px; }
-    .seal-dot { display: none; }
+.history-tag:hover { background: rgba(140, 75, 62, 0.15); }
+
+.btn-clear-history {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
 }
-
-/* =========================================
-   BOTTOM NAV: MENU MOBILE PREMIUM
-   ========================================= */
-
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background-color: #F2EFE9; /* Creme Anauá */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid rgba(140, 75, 62, 0.1);
-    z-index: 1000;
-    padding-bottom: env(safe-area-inset-bottom); /* Ajuste para iPhones novos */
-}
-
-.nav-item span {
-    font-size: 9px !important; /* Tamanho bem pequeno e delicado */
-    text-transform: uppercase; /* Letras maiúsculas para o toque de luxo */
-    letter-spacing: 1px;       /* Espaçamento para não embolar as letras */
-    font-weight: 600;          /* Peso semibold para leitura */
-    margin-top: 4px;           /* Distância entre o ícone e o texto */
-}
-
-/* Esconder o menu no Desktop (já que temos o header no topo) */
-@media (min-width: 769px) {
-    .bottom-nav {
-        display: none !important;
-    }
-}
-
-.nav-item {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    color: var(--color-text-light);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    flex: 1;
-}
-
-/* Estilo para o item ativo (onde o usuário está) */
-.nav-item.active {
-    color: #8C4B3E; /* Marrom Anauá */
-}
-
-/* Ajuste caso você queira tirar os emojis depois e usar ícones */
-.nav-item i, .nav-item span {
-    font-size: 18px;
-    margin-bottom: 2px;
-}
-
-/* Efeito de clique suave */
-.nav-item:active {
-    transform: scale(0.9);
-    opacity: 0.7;
-}
-
-
