@@ -1,4 +1,4 @@
-    const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
     const productItems = document.querySelectorAll('.product-item');
 
     filterButtons.forEach(button => {
@@ -25,21 +25,21 @@
     });
 
 
+// ✅ NOME ALTERADO PARA NÃO DAR CONFLITO COM O MAIN.JS
+const botoesVitrineLoja = document.querySelectorAll('.add-to-cart');
 
-const addButtons = document.querySelectorAll('.add-to-cart');
-
-addButtons.forEach(button => {
+botoesVitrineLoja.forEach(button => {
     button.addEventListener('click', (e) => {
         // 1. TRAVA DE SEGURANÇA (Para evitar o "V" duplo ou cliques múltiplos)
         if (button.innerText.includes("✓")) return;
 
-        // 2. CAPTURA DOS DADOS (O que antes não existia)
+        // 2. CAPTURA DOS DADOS
         const productCard = e.target.closest('article') || e.target.closest('.product-item');
         const name = productCard.querySelector('h3').innerText;
         const price = productCard.querySelector('.product-price').innerText;
         const image = productCard.querySelector('img').src;
 
-        // 3. ENVIO PARA O CÉREBRO (Passando os dados capturados)
+        // 3. ENVIO PARA O CÉREBRO
         addItemToCart(name, price, image);
 
         // 4. FEEDBACK VISUAL
@@ -55,8 +55,6 @@ addButtons.forEach(button => {
         }, 1500);
     });
 });
-
-
 
 
 // Função para alternar o estado de favorito //
@@ -85,26 +83,7 @@ function toggleFavorito(idProduto, btn) {
 }
 
 
-
-
-// Função para mudar a quantidade no card antes de enviar
-function changeCardQty(btn, delta) {
-    const input = btn.parentElement.querySelector('input');
-    let val = parseInt(input.value) + delta;
-    if (val < 1) val = 1;
-    input.value = val;
-}
-
-// Função para enviar para o seu carrinho real com a quantidade certa
-function adicionarComQtd(btn, nome, preco, imagem) {
-    const inputQtd = btn.parentElement.querySelector('input');
-    const quantidade = parseInt(inputQtd.value);
-    
-    // Repete a sua função de adicionar 'X' vezes conforme o contador
-    for (let i = 0; i < quantidade; i++) {
-        window.addItemToCart(nome, preco, imagem);
-    }
-}
+// ✅ APAGADAS AS FUNÇÕES DUPLICADAS AQUI!
 
 // Altera a quantidade no input do card
 function changeCardQty(btn, delta) {
@@ -139,43 +118,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 2. A função principal que busca os containers e desenha as estrelas
 function initEstrelasDinamicas() {
-    // Busca todos os '.stars-container' que têm o atributo 'data-nota'
     const containersDeEstrelas = document.querySelectorAll('.stars-container[data-nota]');
 
     containersDeEstrelas.forEach(container => {
-        // Lê o valor numérico (ex: 4.5) e transforma em número real
         const notaRaw = container.getAttribute('data-nota');
         const nota = parseFloat(notaRaw);
 
-        // Se a nota não for um número válido, pula para o próximo
         if (isNaN(nota)) return;
 
-        // Chama a função que cria o código HTML dos SVGs
         const htmlDasEstrelas = gerarHtmlDeEstrelas(nota);
-
-        // Coloca o desenho das estrelas dentro da div vazia no HTML
         container.innerHTML = htmlDasEstrelas;
     });
 }
 
 // 3. A função que decide se é Cheia, Meia ou Vazia e retorna o SVG
 function gerarHtmlDeEstrelas(nota) {
-    // Código SVG do Google Material Icons (Padrão Amazon/Shopee)
     const svgCheio = '<svg class="star-svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2l-2.81 6.63L2 9.24l5.46 4.73L5.82 21z"/></svg>';
     const svgMeio = '<svg class="star-svg" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>';
     const svgVazio = '<svg class="star-svg empty" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>';
 
     let htmlAcumulado = '';
 
-    // Loop de 1 a 5 (para as 5 estrelas)
     for (let i = 1; i <= 5; i++) {
-        // Exemplo para nota 3.5:
-        // i=1 (1<=3.5) -> Cheio
-        // i=2 (2<=3.5) -> Cheio
-        // i=3 (3<=3.5) -> Cheio
-        // i=4 (4<=3.5 NÃO, mas 4<=4.0 SIM) -> Meio
-        // i=5 (Nenhuma condição) -> Vazio
-        
         if (nota >= i) {
             htmlAcumulado += svgCheio;
         } else if (nota >= i - 0.5) {
@@ -187,9 +151,6 @@ function gerarHtmlDeEstrelas(nota) {
     return htmlAcumulado;
 }
          
-
-
-
 
 // --- AUTOMAÇÃO DE ESTOQUE NA LOJA ---
 document.addEventListener("DOMContentLoaded", function() {
@@ -229,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const qtySelector = card.querySelector('.qty-selector');
                 if (qtySelector) {
                     qtySelector.style.opacity = '0.3';
-                    qtySelector.style.pointerEvents = 'none'; // Impede o clique no + e -
+                    qtySelector.style.pointerEvents = 'none'; 
                 }
 
                 // Trava visualmente o botão do carrinho e deixa cinza
@@ -246,5 +207,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-

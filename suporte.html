@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F9F4EF">
+    
+    <title>Atendimento e Suporte | Anauá</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&family=Inter:wght@300;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/cart-sidebar.css">
+    <link rel="stylesheet" href="css/pages/suporte.css">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <link rel="shortcut icon" href="assets/icons/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/icons/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icons/logo.png" type="image/x-icon">
+    
+    <script src="js/produtos-db.js"></script>
+</head>
+<body class="bg-offwhite"> <header class="top-header">
+    <div class="header-container">
+        <nav class="nav-left">
+            <a href="sobre.html">Sobre</a>
+            <a href="loja.html">Loja</a>
+        </nav>
+        <a href="index.html" class="logo-central">ANAUÁ</a>
+        <div class="nav-right">
+            <a href="login.html" class="header-icon" title="Perfil"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+            <button class="header-icon search-trigger" title="Buscar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+            <button class="header-icon cart-trigger" title="Carrinho">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count" class="cart-badge">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <span>Home > Central de Atendimento</span>
+</div>
+
+<main class="suporte-container">
+    
+    <aside class="suporte-sidebar">
+        <h3>Atendimento</h3>
+        <nav id="suporte-nav">
+            <a href="#envio" class="active">Envio e Entrega</a>
+            <a href="#trocas">Trocas e Devoluções</a>
+            <a href="#faq">Dúvidas Frequentes</a>
+            <a href="#privacidade">Política de Privacidade</a>
+            <a href="#termos">Termos e Condições</a>
+            <a href="#contato">Fale Conosco</a>
+        </nav>
+    </aside>
+
+    <section class="suporte-content-area">
+        
+        <div id="envio" class="suporte-tab active">
+            <h2>Políticas de Envio e Entrega</h2>
+            <h4>1. COMPROMISSO ANAUÁ</h4>
+            <p>Sabemos que a expectativa para iniciar seu ritual de autocuidado é especial.</p>
+            <p>Por isso, a Anauá se compromete a processar, embalar e enviar seus pedidos com agilidade, cuidado e responsabilidade, garantindo que cada produto chegue até você em perfeitas condições, preservando a qualidade dos ativos naturais brasileiros.</p>
+
+            <h4>2. PRAZO DE PROCESSAMENTO</h4>
+            <p>Após a confirmação do pagamento, o pedido passa por um processo interno de:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>separação;</li>
+                <li>conferência;</li>
+                <li>embalagem.</li>
+            </ul>
+            <p>Esse processo pode levar até 2 (dois) dias úteis.</p>
+            <p>Para pagamentos via boleto bancário, a compensação pode levar até 3 (três) dias úteis, sendo o envio iniciado apenas após a confirmação.</p>
+
+            <h4>3. PRAZOS E MODALIDADES DE ENTREGA</h4>
+            <p>O prazo de entrega começa a contar após o despacho do pedido.</p>
+            <p>As opções de envio disponíveis serão apresentadas no momento do checkout, podendo incluir:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>Correios (PAC ou Sedex);</li>
+                <li>transportadoras parceiras.</li>
+            </ul>
+            <p>O prazo e o valor do frete variam de acordo com:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>CEP de destino;</li>
+                <li>modalidade escolhida.</li>
+            </ul>
+
+            <h4>4. RASTREAMENTO DO PEDIDO</h4>
+            <p>Assim que o pedido for despachado, você receberá um e-mail com o código de rastreamento.</p>
+            <p>Com esse código, será possível acompanhar todas as etapas da entrega diretamente no site da transportadora.</p>
+
+            <h4>5. TENTATIVAS DE ENTREGA</h4>
+            <p>As transportadoras geralmente realizam até 3 tentativas de entrega no endereço informado.</p>
+            <p>Caso não haja sucesso:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>o produto poderá retornar ao centro de distribuição;</li>
+                <li>um novo envio poderá ser cobrado.</li>
+            </ul>
+
+            <h4>6. ENDEREÇO DE ENTREGA</h4>
+            <p>É de responsabilidade do cliente preencher corretamente os dados de entrega.</p>
+            <p>A Anauá não se responsabiliza por:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>endereços incorretos ou incompletos;</li>
+                <li>ausência de destinatário no local;</li>
+                <li>restrições de entrega na região.</li>
+            </ul>
+            <p>Caso o pedido retorne por erro no endereço, o reenvio poderá ser condicionado ao pagamento de um novo frete.</p>
+
+            <h4>7. ATRASOS NA ENTREGA</h4>
+            <p>Embora trabalhemos com parceiros confiáveis, podem ocorrer atrasos por fatores externos, como:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>condições climáticas;</li>
+                <li>greves;</li>
+                <li>restrições logísticas;</li>
+                <li>períodos de alta demanda.</li>
+            </ul>
+            <p>Nesses casos, a Anauá prestará suporte para acompanhamento e resolução da entrega.</p>
+
+            <h4>8. PRODUTOS DANIFICADOS NO TRANSPORTE</h4>
+            <p>Se o pedido for recebido com:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>embalagem violada;</li>
+                <li>produto avariado;</li>
+                <li>sinais de vazamento;</li>
+            </ul>
+            <p>recomendamos que:</p>
+            <ol style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>registre imagens no momento da entrega;</li>
+                <li>entre em contato imediatamente com nosso atendimento.</li>
+            </ol>
+            <p>Após análise, providenciaremos a melhor solução.</p>
+
+            <h4>9. EMBALAGEM SUSTENTÁVEL</h4>
+            <p>Em alinhamento com nossa filosofia eco-conscious, utilizamos:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>caixas de papelão reciclado;</li>
+                <li>materiais de proteção biodegradáveis;</li>
+                <li>redução de plásticos desnecessários.</li>
+            </ul>
+            <p>Nosso objetivo é unir cuidado com você e com o meio ambiente 🌿</p>
+
+            <h4>10. CONTATO</h4>
+            <p>Para dúvidas ou suporte:</p>
+            <p>📩 E-mail: sac@anaua.com<br>
+            📱 WhatsApp: (00) 00000-0000</p>
+
+            <h4>11. ATUALIZAÇÕES</h4>
+            <p>Esta política poderá ser atualizada para refletir melhorias logísticas ou alterações operacionais.</p>
+
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">© 2026 ANAUÁ — Todos os direitos reservados.</p>
+        </div>
+
+        <!-- SEÇÃO DE TROCAS E DEVOLUÇÕES -->
+        <div id="trocas" class="suporte-tab">
+            <h2>Trocas, Devoluções e Reembolsos</h2>
+            <h4>1. OBJETIVO</h4>
+            <p>A presente Política de Trocas, Devoluções e Reembolsos da Anauá estabelece as condições, prazos e procedimentos aplicáveis às solicitações relacionadas a produtos adquiridos por meio de nosso site.</p>
+            <p>Este documento foi elaborado em conformidade com o Código de Defesa do Consumidor (Lei nº 8.078/1990) e deve ser interpretado em conjunto com os Termos de Uso e a Política de Privacidade disponíveis na plataforma.</p>
+            <p>Nosso compromisso é garantir uma experiência segura, transparente e satisfatória em todas as etapas do seu ritual de cuidado.</p>
+
+            <h4>2. COMO SOLICITAR TROCA OU DEVOLUÇÃO</h4>
+            <p>Caso deseje solicitar troca ou devolução, entre em contato com nosso atendimento informando:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>número do pedido;</li>
+                <li>nome do produto;</li>
+                <li>motivo da solicitação;</li>
+                <li>fotos ou vídeos (quando necessário para análise);</li>
+                <li>dados cadastrais.</li>
+            </ul>
+            <p><strong>Canais de atendimento:</strong><br>
+            📩 E-mail: sac@anaua.com<br>
+            📱 WhatsApp: (00) 00000-0000</p>
+            <p>Após o contato, nossa equipe realizará a análise e orientará você sobre os próximos passos.</p>
+
+            <h4>3. DIREITO DE ARREPENDIMENTO</h4>
+            <p>Para compras realizadas online, você poderá exercer o direito de arrependimento no prazo de até 7 (sete) dias corridos, contados a partir do recebimento do produto.</p>
+            <p>Para que a devolução seja aceita:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>o produto deve estar sem sinais de uso;</li>
+                <li>deve estar na embalagem original;</li>
+                <li>deve ser enviado com nota fiscal e eventuais brindes.</li>
+            </ul>
+            <p>Após a confirmação e análise do produto devolvido, realizaremos o reembolso integral, incluindo o valor do frete.</p>
+
+            <h4>4. PRODUTOS COM DEFEITO OU AVARIA</h4>
+            <p>Prezamos pela qualidade dos nossos produtos, mas caso identifique:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>vazamentos;</li>
+                <li>embalagens danificadas;</li>
+                <li>defeitos aparentes ou de fabricação;</li>
+            </ul>
+            <p>você poderá solicitar análise no prazo de até 30 (trinta) dias após o recebimento.</p>
+            <p>Nossa equipe poderá solicitar imagens para avaliação inicial. Confirmado o problema, ofereceremos uma solução adequada, como:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>substituição do produto;</li>
+                <li>reembolso;</li>
+                <li>ou outra alternativa conforme previsto na legislação.</li>
+            </ul>
+
+            <h4>5. CONDIÇÕES PARA TROCA OU DEVOLUÇÃO</h4>
+            <p>Para análise da solicitação, o produto deverá ser devolvido:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>na embalagem original;</li>
+                <li>com a nota fiscal;</li>
+                <li>sem indícios de uso indevido;</li>
+                <li>com todos os itens e brindes recebidos.</li>
+            </ul>
+            <p>Caso essas condições não sejam atendidas, a solicitação poderá ser recusada e o produto devolvido ao cliente.</p>
+
+            <h4>6. ANÁLISE DE PRODUTOS</h4>
+            <p>Após o recebimento do item em nosso centro logístico, será realizada uma análise de qualidade para verificar:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>integridade do produto;</li>
+                <li>conformidade com as condições de devolução;</li>
+                <li>eventual defeito ou vício.</li>
+            </ul>
+            <p>O prazo de análise poderá variar conforme o caso, sendo realizado com prioridade e transparência.</p>
+
+            <h4>7. REEMBOLSO</h4>
+            <p>O reembolso será realizado conforme o método de pagamento utilizado:</p>
+            <p><strong>Cartão de crédito:</strong><br>O estorno será solicitado à administradora do cartão, podendo ocorrer em até duas faturas subsequentes.</p>
+            <p><strong>PIX ou boleto bancário:</strong><br>O valor será devolvido por transferência bancária para conta de titularidade do comprador.</p>
+            <p>Os prazos podem variar conforme a instituição financeira.</p>
+
+            <h4>8. PRODUTOS DANIFICADOS NO TRANSPORTE</h4>
+            <p>Caso o produto seja recebido com danos visíveis na embalagem ou no conteúdo:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>entre em contato imediatamente com nosso atendimento;</li>
+                <li>registre imagens do ocorrido, se possível.</li>
+            </ul>
+            <p>Após análise, providenciaremos a substituição do produto ou solução equivalente.</p>
+
+            <h4>9. CUSTOS DE FRETE</h4>
+            <p>Os custos de devolução serão de responsabilidade da Anauá nos seguintes casos:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>direito de arrependimento (dentro do prazo legal);</li>
+                <li>defeito de fabricação;</li>
+                <li>erro no envio;</li>
+                <li>produto avariado.</li>
+            </ul>
+            <p>Em outras situações, as condições de frete serão informadas no momento da solicitação.</p>
+
+            <h4>10. TRATAMENTO DE DADOS PESSOAIS</h4>
+            <p>Para processar solicitações, poderemos utilizar dados como:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>nome completo;</li>
+                <li>CPF;</li>
+                <li>endereço;</li>
+                <li>informações do pedido;</li>
+                <li>histórico de atendimento.</li>
+            </ul>
+            <p>O tratamento será realizado conforme nossa Política de Privacidade, em conformidade com a legislação vigente.</p>
+
+            <h4>11. ATUALIZAÇÕES</h4>
+            <p>Esta Política poderá ser atualizada a qualquer momento para refletir melhorias nos processos ou alterações legais.<br>
+            Recomendamos a consulta periódica desta página.</p>
+
+            <h4>12. CONTATO</h4>
+            <p>Em caso de dúvidas, nossa equipe está à disposição:</p>
+            <p>📩 E-mail: sac@anaua.com<br>
+            📱 WhatsApp: (00) 00000-0000</p>
+
+            <h4>13. DATA DE ATUALIZAÇÃO</h4>
+            <p>Última atualização: 2026</p>
+
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">© 2026 ANAUÁ — Todos os direitos reservados.</p>
+        </div>
+
+        <!-- SEÇÃO DE FAQ -->
+        <div id="faq" class="suporte-tab">
+            <h2>Dúvidas Frequentes</h2>
+            <p>Reunimos as principais perguntas da nossa comunidade para facilitar sua jornada de beleza limpa.</p>
+
+            <div class="faq-accordion">
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Os produtos da Anauá são testados em animais?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Jamais. Somos uma marca 100% Cruelty-Free e Vegana. Respeitamos todas as formas de vida e não utilizamos nenhum ingrediente de origem animal em nossas formulações, tampouco realizamos testes em animais em nenhuma etapa da produção.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Gestantes e lactantes podem usar os produtos?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Nossas fórmulas são ricas em ativos naturais e livres de toxinas (parabenos, sulfatos e petrolatos). No entanto, devido à presença de óleos essenciais puros em alta concentração, recomendamos sempre consultar seu médico obstetra ou dermatologista antes de iniciar o uso de qualquer cosmético durante a gestação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Qual a validade dos cosméticos naturais?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Por utilizarmos conservantes naturais e suaves, nossos produtos possuem uma validade de 24 meses lacrados e, geralmente, 6 meses após abertos. Recomendamos mantê-los em local fresco, longe da luz solar direta, para preservar a potência dos ativos amazônicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Posso usar os produtos Anauá em peles sensíveis?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Nossas fórmulas são desenvolvidas para serem suaves e eficazes, mesmo em peles sensíveis. No entanto, recomendamos realizar um teste de contato antes do uso regular, aplicando uma pequena quantidade do produto na parte interna do antebraço e aguardando 24 horas para verificar qualquer reação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Os produtos Anauá são indicados para todos os tipos de pele?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim! Nossas fórmulas são cuidadosamente balanceadas para oferecer benefícios a todos os tipos de pele, desde as mais secas até as mais oleosas. Os ativos naturais amazônicos presentes em nossos produtos ajudam a equilibrar a pele, promovendo hidratação, controle de oleosidade e luminosidade, independentemente do tipo de pele.</p>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Vocês entregam para todo o Brasil?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim! Realizamos entregas em todo o território nacional.</p>
+                            <p>O prazo e o valor do frete são calculados automaticamente no checkout, de acordo com o seu CEP e a modalidade escolhida.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Como posso acompanhar meu pedido?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Assim que o seu pedido for despachado, você receberá um e-mail com o código de rastreamento. Com ele, você poderá acompanhar todas as etapas da entrega diretamente pelo site da transportadora ou dos Correios.</p>
+                            <p>Caso não encontre o e-mail, verifique também sua caixa de spam.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Posso trocar ou devolver um produto?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim. Você pode solicitar troca ou devolução conforme as condições da nossa Política de Trocas e Devoluções.</p>
+                            <p>De forma geral:</p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                                <li>Prazo de até 7 dias para arrependimento;</li>
+                                <li>Produto deve estar sem uso e na embalagem original.</li>
+                            </ul>
+                            <p>Para mais detalhes, recomendamos consultar a política completa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Recebi um produto com defeito ou avaria. O que fazer?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se o seu produto apresentar qualquer irregularidade, pedimos que entre em contato com nosso atendimento em até 30 dias após o recebimento.</p>
+                            <p>Nossa equipe poderá solicitar fotos para análise e, caso o problema seja confirmado, realizaremos a substituição ou reembolso sem custos adicionais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Quais formas de pagamento são aceitas?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Aceitamos as principais formas de pagamento disponíveis no mercado:</p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                                <li>Cartão de crédito;</li>
+                                <li>PIX;</li>
+                                <li>Boleto bancário.</li>
+                            </ul>
+                            <p>As opções de parcelamento podem variar conforme o método escolhido no checkout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-dynamic">
+                    <button class="faq-question">
+                        Não encontrei minha dúvida. Como entrar em contato?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se precisar de ajuda, nosso time está pronto para te atender.<br>Você pode entrar em contato através de:</p>
+                            <ul style="margin-bottom: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+                                <li><strong>E-mail:</strong> suporte@anaua.com</li>
+                                <li><strong>WhatsApp:</strong> (00) 00000-0000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- SEÇÃO DE POLÍTICA DE PRIVACIDADE -->
+        <div id="privacidade" class="suporte-tab">
+            <h2>Política de Privacidade e Cookies</h2>
+
+            <h4>1. SOBRE ESTA POLÍTICA</h4>
+            <p>Na Anauá, entendemos que a sua privacidade é parte essencial da sua experiência conosco.</p>
+            <p>Por isso, adotamos medidas técnicas, administrativas e organizacionais adequadas para proteger seus dados pessoais, garantindo que sejam tratados com segurança, transparência e em conformidade com a legislação brasileira, especialmente a Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018).</p>
+            <p>Ao acessar nosso site, interagir com nossos serviços ou realizar compras, determinadas informações poderão ser coletadas para possibilitar o funcionamento da plataforma, o processamento de pedidos, a personalização da experiência e a prevenção de fraudes.</p>
+            <p>Esta Política de Privacidade tem como objetivo esclarecer, de forma clara e acessível:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>quais dados coletamos;</li>
+                <li>como essas informações são coletadas;</li>
+                <li>para quais finalidades utilizamos os dados;</li>
+                <li>quais bases legais autorizam o tratamento;</li>
+                <li>com quem os dados podem ser compartilhados;</li>
+                <li>por quanto tempo os dados são armazenados;</li>
+                <li>como utilizamos cookies e tecnologias semelhantes;</li>
+                <li>quais são os seus direitos como titular de dados pessoais.</li>
+            </ul>
+
+            <p>O tratamento dos dados será sempre fundamentado em uma base legal válida, como:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>execução de contrato;</li>
+                <li>cumprimento de obrigação legal ou regulatória;</li>
+                <li>legítimo interesse, respeitando seus direitos e liberdades;</li>
+                <li>consentimento, quando necessário.</li>
+            </ul>
+            <p>Sempre que o consentimento for exigido, ele será solicitado de forma livre, informada e inequívoca, podendo ser revogado a qualquer momento.</p>
+
+            <h4>2. DADOS COLETADOS, FORMAS E FINALIDADES</h4>
+            <p>A Anauá poderá coletar diferentes tipos de dados pessoais, de acordo com sua interação com o site.</p>
+
+            <p><strong>Dados fornecidos diretamente pelo usuário:</strong></p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>nome completo;</li>
+                <li>CPF;</li>
+                <li>e-mail;</li>
+                <li>telefone;</li>
+                <li>endereço de entrega e cobrança.</li>
+            </ul>
+            <p><strong>Finalidade:</strong></p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>criação de conta;</li>
+                <li>processamento de pedidos;</li>
+                <li>entrega de produtos;</li>
+                <li>atendimento ao cliente;</li>
+                <li>emissão de documentos fiscais.</li>
+            </ul>
+
+            <p><strong>Dados de navegação (coletados automaticamente):</strong></p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>endereço IP;</li>
+                <li>tipo de navegador;</li>
+                <li>dispositivo utilizado;</li>
+                <li>páginas acessadas;</li>
+                <li>data e hora de acesso.</li>
+            </ul>
+            <p><strong>Finalidade:</strong></p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>funcionamento e segurança do site;</li>
+                <li>prevenção de fraudes;</li>
+                <li>análise de desempenho;</li>
+                <li>melhoria da experiência do usuário.</li>
+            </ul>
+
+            <p><strong>Dados de pagamento:</strong></p>
+            <p>Os dados financeiros são processados por intermediadores seguros. Podemos receber informações como:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>método de pagamento;</li>
+                <li>status da transação;</li>
+                <li>identificadores da operação.</li>
+            </ul>
+            <p><strong>Finalidade:</strong></p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>execução do pagamento;</li>
+                <li>prevenção a fraudes;</li>
+                <li>confirmação de pedidos.</li>
+            </ul>
+
+            <p><strong>Dados de marketing e relacionamento:</strong></p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>histórico de compras;</li>
+                <li>preferências de navegação;</li>
+                <li>interações com campanhas.</li>
+            </ul>
+            <p><strong>Finalidade:</strong></p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>personalização de ofertas;</li>
+                <li>envio de comunicações relevantes;</li>
+                <li>melhoria da experiência do cliente.</li>
+            </ul>
+            <p>O envio de comunicações promocionais será realizado apenas mediante consentimento, podendo ser cancelado a qualquer momento.</p>
+
+            <p><strong>Dados sensíveis:</strong></p>
+            <p>A Anauá não solicita dados pessoais sensíveis.<br>Caso sejam fornecidos voluntariamente, serão tratados apenas quando estritamente necessário.</p>
+
+            <h4>3. COMPARTILHAMENTO DE DADOS</h4>
+            <p>A Anauá não comercializa dados pessoais.</p>
+            <p>Os dados poderão ser compartilhados com terceiros apenas quando necessário para a prestação de serviços, como:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>gateways de pagamento;</li>
+                <li>sistemas antifraude;</li>
+                <li>transportadoras;</li>
+                <li>plataformas de e-commerce;</li>
+                <li>ferramentas de marketing e CRM.</li>
+            </ul>
+            <p>Todos os parceiros seguem padrões rigorosos de segurança e confidencialidade.</p>
+
+            <h4>4. TRANSFERÊNCIA INTERNACIONAL DE DADOS</h4>
+            <p>Alguns serviços utilizados podem estar localizados fora do Brasil.</p>
+            <p>Nesses casos, garantimos que a transferência de dados ocorrerá em conformidade com a LGPD, utilizando mecanismos adequados de proteção.</p>
+
+            <h4>5. RETENÇÃO DE DADOS</h4>
+            <p>Os dados serão armazenados apenas pelo tempo necessário para cumprir as finalidades descritas nesta Política.</p>
+            <p>Em alguns casos, poderão ser mantidos por períodos maiores para:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>cumprimento de obrigações legais;</li>
+                <li>exercício de direitos;</li>
+                <li>prevenção a fraudes.</li>
+            </ul>
+
+            <h4>6. COOKIES E TECNOLOGIAS</h4>
+            <p>Utilizamos cookies para melhorar sua experiência.</p>
+            <p>Eles podem ser classificados como:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li><strong>Essenciais:</strong> funcionamento do site</li>
+                <li><strong>Funcionais:</strong> preferências do usuário</li>
+                <li><strong>Analíticos:</strong> análise de uso</li>
+                <li><strong>Marketing:</strong> personalização de anúncios</li>
+            </ul>
+            <p>O uso de cookies não essenciais dependerá do seu consentimento.</p>
+
+            <h4>7. DIREITOS DO TITULAR</h4>
+            <p>Você pode, a qualquer momento:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>solicitar acesso aos seus dados;</li>
+                <li>corrigir informações;</li>
+                <li>solicitar exclusão;</li>
+                <li>revogar consentimento;</li>
+                <li>obter informações sobre compartilhamento.</li>
+            </ul>
+
+            <h4>8. CONTATO</h4>
+            <p>Para dúvidas ou solicitações relacionadas à privacidade:</p>
+            <p>📩 E-mail: privacidade@anaua.com<br>📞 Atendimento: disponível nos canais oficiais do site</p>
+
+            <h4>9. ATUALIZAÇÕES</h4>
+            <p>Esta Política poderá ser atualizada periodicamente. Recomendamos sua revisão regular.</p>
+
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">© 2026 ANAUÁ — Todos os direitos reservados.</p>
+        </div>
+
+        <!-- SEÇÃO DE TERMOS E CONDIÇÕES -->
+         <div id="termos" class="suporte-tab">
+            <h2>Termos e Condições</h2>
+
+            <h4>1. IDENTIFICAÇÃO</h4>
+            <p>Este site é operado pela Anauá, marca digital de cosméticos inspirados na biodiversidade brasileira.</p>
+            <p>Os presentes Termos e Condições regulam o acesso, navegação e utilização do site, bem como as compras realizadas por meio da plataforma.</p>
+            <p>Ao acessar ou utilizar este site, o usuário declara que leu, compreendeu e concorda com estes Termos.</p>
+            <p>Caso não concorde com qualquer disposição, recomenda-se a não utilização do site.</p>
+
+            <h4>2. RELAÇÃO COM OUTRAS POLÍTICAS</h4>
+            <p>A utilização deste site está sujeita também às seguintes políticas:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>Política de Privacidade</li>
+                <li>Política de Trocas e Devoluções</li>
+                <li>Política de Envio e Entrega</li>
+            </ul>
+            <p>Esses documentos complementam os presentes Termos e devem ser interpretados em conjunto.</p>
+
+            <h4>3. CADASTRO DO USUÁRIO</h4>
+            <p>Para realizar compras, o usuário poderá fornecer dados como:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>nome completo;</li>
+                <li>CPF;</li>
+                <li>e-mail;</li>
+                <li>telefone;</li>
+                <li>endereço de entrega.</li>
+            </ul>
+            <p>O usuário declara que:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>possui capacidade civil para contratar;</li>
+                <li>fornece informações verdadeiras e atualizadas.</li>
+            </ul>
+            <p>A Anauá não se responsabiliza por prejuízos decorrentes de dados incorretos.</p>
+
+            <h4>4. ATENDIMENTO AO CLIENTE</h4>
+            <p>Em caso de dúvidas ou solicitações, o usuário poderá entrar em contato pelos canais oficiais:</p>
+            <p>📩 E-mail: sac@anaua.com<br>
+            📱 WhatsApp: (00) 00000-0000</p>
+
+            <h4>5. DISPONIBILIDADE DE PRODUTOS</h4>
+            <p>Os produtos estão sujeitos à disponibilidade de estoque.</p>
+            <p>Caso haja indisponibilidade após a compra, o cliente poderá optar por:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>substituição por produto similar;</li>
+                <li>cancelamento com reembolso integral.</li>
+            </ul>
+
+            <h4>6. PREÇOS E OFERTAS</h4>
+            <p>Os preços são exibidos em Reais (R$) e podem ser alterados a qualquer momento.</p>
+            <p>Será sempre considerado válido o valor exibido no momento da confirmação do pedido.</p>
+            <p>Promoções podem possuir regras específicas informadas na página correspondente.</p>
+
+            <h4>7. FORMAS DE PAGAMENTO</h4>
+            <p>As formas de pagamento disponíveis incluem:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>cartão de crédito;</li>
+                <li>PIX;</li>
+                <li>boleto bancário.</li>
+            </ul>
+            <p>Pagamentos estão sujeitos à aprovação da instituição financeira.</p>
+
+            <h4>8. CONFIRMAÇÃO DO PAGAMENTO</h4>
+            <p>O prazo de confirmação pode variar:</p>
+            <ul style="margin-bottom: 15px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li><strong>cartão de crédito:</strong> até 3 dias;</li>
+                <li><strong>boleto:</strong> até 2 dias úteis;</li>
+                <li><strong>PIX:</strong> imediato.</li>
+            </ul>
+            <p>O envio do pedido ocorre após a confirmação do pagamento.</p>
+
+            <h4>9. ENTREGA</h4>
+            <p>Os prazos e condições de entrega estão descritos na Política de Envio e Entrega.</p>
+
+            <h4>10. TROCAS E DEVOLUÇÕES</h4>
+            <p>As regras aplicáveis estão detalhadas na Política de Trocas e Devoluções.</p>
+
+            <h4>11. USO DOS PRODUTOS</h4>
+            <p>Os produtos devem ser utilizados conforme instruções fornecidas.</p>
+            <p>Recomenda-se a leitura da composição e, quando aplicável, teste de sensibilidade.</p>
+
+            <h4>12. AUTENTICIDADE E CANAIS OFICIAIS</h4>
+            <p>A Anauá não se responsabiliza por produtos adquiridos fora de canais oficiais.</p>
+
+            <h4>13. PREVENÇÃO À FRAUDE</h4>
+            <p>Para garantir a segurança das transações, a Anauá poderá:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>solicitar dados adicionais;</li>
+                <li>suspender pedidos;</li>
+                <li>cancelar compras suspeitas.</li>
+            </ul>
+
+            <h4>14. CONTEÚDO DO USUÁRIO</h4>
+            <p>Usuários poderão publicar avaliações ou comentários.</p>
+            <p>Ao publicar conteúdo, o usuário autoriza seu uso pela Anauá para fins institucionais e promocionais.</p>
+            <p>Conteúdos inadequados poderão ser removidos.</p>
+
+            <h4>15. PROPRIEDADE INTELECTUAL</h4>
+            <p>Todo o conteúdo do site (textos, imagens, layout, marca) é protegido por lei.</p>
+            <p>É proibida a reprodução sem autorização.</p>
+
+            <h4>16. DISPONIBILIDADE DO SITE</h4>
+            <p>O site pode sofrer interrupções para manutenção ou por fatores externos.</p>
+
+            <h4>17. ALTERAÇÕES DOS TERMOS</h4>
+            <p>A Anauá poderá atualizar estes Termos a qualquer momento.</p>
+            <p>A versão vigente estará sempre disponível no site.</p>
+
+            <h4>18. LEGISLAÇÃO APLICÁVEL</h4>
+            <p>Estes Termos são regidos pelas leis brasileiras, incluindo:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; color: #555; line-height: 1.8;">
+                <li>Código de Defesa do Consumidor;</li>
+                <li>Lei Geral de Proteção de Dados (LGPD);</li>
+                <li>Marco Civil da Internet.</li>
+            </ul>
+
+            <h4>19. DATA DE ATUALIZAÇÃO</h4>
+            <p>Última atualização: 2026</p>
+
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">© 2026 ANAUÁ — Todos os direitos reservados.</p>
+        </div>
+
+        <!-- SEÇÃO DE CONTATO -->
+        <div id="contato" class="suporte-tab">
+            <h2>Fale Conosco</h2>
+            <p>Tem alguma dúvida sobre qual ritual é mais indicado para sua pele? Quer falar sobre o seu pedido? Nossa equipe de atendimento está pronta para ouvir você com a mesma delicadeza que aplicamos em nossos produtos.</p>
+            
+            <div class="contato-info-box">
+                <div class="info-item">
+                    <h5>E-mail de Atendimento</h5>
+                    <p>suporte@anaua.com.br</p>
+                    <small>Prazo de resposta: Até 24h úteis.</small>
+                </div>
+                <div class="info-item">
+                    <h5>Horário de Funcionamento</h5>
+                    <p>Segunda a Sexta-feira</p>
+                    <small>Das 09h00 às 18h00</small>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<a href="https://wa.me/5511999999999" target="_blank" class="floating-whatsapp" title="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+
+
+<div id="cart-sidebar" class="cart-sidebar">
+    
+    <div class="cart-header">
+        <button id="close-cart" class="close-btn">&times;</button>
+        <h3>Meu Carrinho</h3>
+    </div>
+    
+    <div id="cart-items-container">
+        </div>
+
+    <div class="shipping-section">
+        <p id="free-shipping-msg">Faltam R$ 0,00 para Frete Grátis!</p>
+        <div class="progress-container">
+            <div id="shipping-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="cep-input-group">
+            <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
+            <button id="calc-cep-btn">Calcular</button>
+        </div>
+        <p id="shipping-result"></p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-summary" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">R$ 0,00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 8px;">
+                <span>Frete:</span>
+                <span id="cart-shipping-value">R$ 0,00</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: bold; color: #333; padding-top: 10px; border-top: 1px solid #eee;">
+                <span>Total:</span>
+                <span id="cart-sidebar-total">R$ 0,00</span>
+            </div>
+        </div>
+        
+        <button id="btn-checkout-mp" class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+</div> <div id="cart-overlay" class="cart-overlay"></div>
+
+
+<div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+        <div class="search-header">
+            <div class="search-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="main-search-input" placeholder="O que você está buscando?" autocomplete="off">
+            </div>
+            <button id="close-search" class="close-search-btn">Fechar</button>
+        </div>
+
+        <div class="search-content">
+            <div id="search-history-section" class="search-section">
+                <div class="section-header-search">
+                    <h4>Buscas Recentes</h4>
+                    <button id="clear-history" class="btn-clear-history">Limpar</button>
+                </div>
+                <div id="history-list" class="history-tags">
+                    </div>
+            </div>
+
+            <div id="search-results-section" class="search-section" style="display: none;">
+                <h4>Produtos Encontrados</h4>
+                <div id="search-results-grid" class="search-results-grid">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer-premium">
+    <div class="footer-seals">
+        <div class="seal-item"><span>Vegan</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Cruelty Free</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Ativos Amazônicos</span></div>
+        <div class="seal-dot"></div>
+        <div class="seal-item"><span>Eco Friendly</span></div>
+    </div>
+ <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#" class="footer-logo">ANAUÁ</a>
+            <p>Conectando sua pele à essência pura da natureza brasileira.</p>
+            
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://tiktok.com" target="_blank" title="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" title="YouTube Shorts">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" title="X / Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <a href="loja.html">Loja</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="perfil.html">Perfil</a>
+                <a href="sobre.html">Carrinho</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <a href="suporte.html#envio">Envio e Entrega</a>
+                <a href="suporte.html#trocas">Trocas e Devoluções</a>
+                <a href="suporte.html#contato">Contato</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Anauá Cosméticos. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Início</span></a>
+    <a href="loja.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg><span>Loja</span></a>
+    <a href="#" class="nav-item search-trigger"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><span>Busca</span></a>
+    <a href="perfil.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Perfil</span></a>
+</nav>
+
+<script src="js/cart.js"></script>
+<script src="js/suporte.js"></script>
+<script src="js/sidebar-cart.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

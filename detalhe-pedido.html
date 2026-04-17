@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/pages/cart-sidebar.css">
     <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
     <link rel="shortcut icon" href="assets/icons/logo.png" type="image/x-icon">
-    
+
+    <script src="js/produtos-db.js"></script>    
 </head>
 
 <body>
@@ -33,9 +34,9 @@
             <a href="login.html" class="header-icon" title="Perfil">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </a>
-            <button class="header-icon" title="Buscar">
+             <button class="header-icon search-trigger" title="Buscar">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </button>
+                </button>
             <button class="header-icon cart-trigger" title="Carrinho">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                 <span id="cart-count" class="cart-badge">0</span>
@@ -336,7 +337,34 @@
         });
     </script>
 
-</body>
+<div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+        <div class="search-header">
+            <div class="search-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="main-search-input" placeholder="O que você está buscando?" autocomplete="off">
+            </div>
+            <button id="close-search" class="close-search-btn">Fechar</button>
+        </div>
+
+        <div class="search-content">
+            <div id="search-history-section" class="search-section">
+                <div class="section-header-search">
+                    <h4>Buscas Recentes</h4>
+                    <button id="clear-history" class="btn-clear-history">Limpar</button>
+                </div>
+                <div id="history-list" class="history-tags">
+                    </div>
+            </div>
+
+            <div id="search-results-section" class="search-section" style="display: none;">
+                <h4>Produtos Encontrados</h4>
+                <div id="search-results-grid" class="search-results-grid">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <footer class="footer-premium">
@@ -353,9 +381,24 @@
 
 
  <div class="footer-container">
-        <div class="footer-brand">
+            <div class="footer-brand">
             <a href="#" class="footer-logo">ANAUÁ</a>
             <p>Conectando sua pele à essência pura da natureza brasileira.</p>
+            
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://tiktok.com" target="_blank" title="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" title="YouTube Shorts">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" title="X / Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                </a>
+            </div>
         </div>
         <div class="footer-links">
             <div class="footer-col">
@@ -367,9 +410,9 @@
             </div>
             <div class="footer-col">
                 <h4>Suporte</h4>
-                <a href="envio.html">Envio e Entrega</a>
-                <a href="trocas.html">Trocas e Devoluções</a>
-                <a href="contato.html">Contato</a>
+                <a href="suporte.html#envio">Envio e Entrega</a>
+                <a href="suporte.html#trocas">Trocas e Devoluções</a>
+                <a href="suporte.html#contato">Contato</a>
             </div>
         </div>
     </div>
@@ -387,10 +430,10 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
         <span>Loja</span>
     </a>
-    <a href="busca.html" class="nav-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-        <span>Busca</span>
-    </a>
+    <a href="#" class="nav-item search-trigger">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+    <span>Busca</span>
+</a>
     <a href="perfil.html" class="nav-item active">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         <span>Perfil</span>
@@ -400,5 +443,7 @@
     
     <script src="js/cart.js"></script>
     <script src="js/sidebar-cart.js"></script>
+    <script src="js/main.js"></script>
 
+</body>
 </html>

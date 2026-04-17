@@ -357,15 +357,83 @@ h1, h2, h3, h4, .logo {
     color: #ffffff;
 }
 
+/* Redes Sociais do Footer */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Borda usando a mesma cor do seu texto, mas um pouco transparente */
+    border: 1px solid rgba(206, 205, 192, 0.4); 
+    color: #CECDC0; /* Cor inicial do ícone */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #F2EFE8; /* Fundo acende com o seu bege claro */
+    border-color: #F2EFE8;
+    color: #55573D; /* O ícone fica da cor do fundo do footer (Verde Oliva) */
+    transform: translateY(-3px); /* Leve pulinho elegante */
+}
+
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
-    .insta-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
-    .footer-brand p { margin: 0 auto; }
-    .footer-links { flex-direction: column; gap: 30px; }
-    .footer-seals { flex-wrap: wrap; gap: 20px; }
-    .seal-dot { display: none; }
+    .footer-container { 
+        flex-direction: column; 
+        gap: 40px; 
+        text-align: center; 
+    }
+
+    .footer-brand p { 
+        margin: 0 auto; 
+    }
+
+    /* Redes Sociais centralizadas no mobile */
+    .social-icons { 
+        justify-content: center; 
+    }
+
+    /* MÁGICA: Menu e Suporte lado a lado no celular */
+    .footer-links { 
+        flex-direction: row; /* Coloca uma coluna ao lado da outra */
+        justify-content: center; /* Centraliza o conjunto */
+        gap: 60px; /* Espaço entre as duas colunas */
+        text-align: left; /* Deixa o texto alinhado à esquerda dentro das colunas para melhor leitura */
+    }
+
+    .footer-seals { 
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .seal-dot { 
+        display: none; 
+    }
+
+    .footer-bottom {
+        margin-top: 50px; /* Diminui o espaçamento final para ficar mais compacto */
+    }
+    .footer-premium {
+        padding-bottom: 90px; /* Empurra o conteúdo do footer pra cima */
+    }
+
+    /* ... o resto do seu código mobile continua igual ... */
+    .footer-container { 
+        flex-direction: column;
+    }
 }
+
+
+
 
 /* =========================================
    OVERLAY DE BUSCA E RESULTADOS
